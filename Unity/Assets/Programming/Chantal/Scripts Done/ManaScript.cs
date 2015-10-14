@@ -12,7 +12,7 @@ public class ManaScript : MonoBehaviour {
 	public AbilitySwitchScript abilitySwitchScr;
 
 	public Slider manaBar;
-	private float manaValue;
+	public float manaValue;
 	private float maxMana;
 
 	public float manaRegenTimer;
@@ -89,7 +89,7 @@ public class ManaScript : MonoBehaviour {
 			}else {
 				manaUseTimer = manaUseTimerRes;
 				abilitySwitchScr.abilityNum = 0;
-				abilitySwitchScr.Switchability();
+				abilitySwitchScr.SetSwitchedAbility();
 				abilitySwitchScr.GetAbilityImg();
 			} 
 		}
