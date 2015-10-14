@@ -14,15 +14,13 @@ public class PlayerHpScript : MonoBehaviour {
 	public int curMaxHearths;
 	public int curHP;
 	public int maxHP;
-	public int life;
+    public int life;
 	public int startMaxHearts;
+	static public int shield = 1;
 	public Text lifeText;
 	public List<GameObject> heartSpots = new List<GameObject>();
 	public List<GameObject> activeHeartSpots = new List<GameObject>();
 
-	void Awake() {
-		DontDestroyOnLoad(transform.gameObject);
-	}
 
 	void Start() {
 		maxHP = curMaxHearths * 2;
@@ -33,6 +31,7 @@ public class PlayerHpScript : MonoBehaviour {
 	}
 
 	public void GetDmg(int dmg) {
+		dmg *= shield;
 		if (curHP - dmg <= 0) {
 			LoseLife();
 		} else {
@@ -54,7 +53,7 @@ public class PlayerHpScript : MonoBehaviour {
 	public void HealByAmount(int healAmount) {
 		if (curHP + healAmount >= maxHP) {
 			FullHeal();
-		} else {
+        } else {
 			int newHp = curHP + healAmount;
 			for (int myHp = curHP; myHp < newHp; myHp++) {
 				curHP++;
