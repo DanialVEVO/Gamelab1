@@ -67,7 +67,7 @@ public class ManaScript : MonoBehaviour {
 					manaRegenTimer = manaRegenTimerRes;
 				}
 			} else if (maxMana <=  manaValue + manaRegenGain){
-				manaValue = manaValue;
+				manaBar.value = manaValue;
 			} else {
 				manaRegenTimer = manaRegenTimerRes;
 			}

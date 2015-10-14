@@ -11,7 +11,7 @@ public class QuicksandScript : MonoBehaviour {
 	public PlayerHpScript playerHpScr;
 	public Rigidbody playerRigidbody;
 	public int sinkDmg;
-	public int sinkSpeed;
+	public int sinkSlow;
 	public int defaultDrag;
 	public bool sinkPanic;
 	public float sinkDmgTimer;
@@ -24,7 +24,7 @@ public class QuicksandScript : MonoBehaviour {
 
 	public void Sink() {
 		playerRigidbody.useGravity = true;
-		playerRigidbody.drag = sinkSpeed;
+		playerRigidbody.drag = sinkSlow;
 	}
 
 	public void StopSink() {
