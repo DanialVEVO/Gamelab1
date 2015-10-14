@@ -36,6 +36,7 @@ public class ManaScript : MonoBehaviour {
 	void Update() {
 		GainManaOverTime();
 		LoseManaOverTime();
+		print (manaValue);
 	}
 
 	public void UseMana(float manaUsed) {
@@ -67,10 +68,11 @@ public class ManaScript : MonoBehaviour {
 					manaRegenTimer = manaRegenTimerRes;
 				}
 			} else if (maxMana <=  manaValue + manaRegenGain){
+				manaValue = maxMana;
 				manaBar.value = manaValue;
-			} else {
-				manaRegenTimer = manaRegenTimerRes;
-			}
+			} 
+		} else {
+			manaRegenTimer = manaRegenTimerRes;
 		}
 	}
 

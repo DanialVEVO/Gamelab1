@@ -17,26 +17,28 @@ public class AbilitySwitchScript : MonoBehaviour {
 
 	void Start () {
 		abilityUnlocked[0] = true;
-		Switchability();
+		SetSwitchedAbility();
     }
 
 	void Update() {
 		SetAbilityImg();
+		Switchability();
 	}
 	
 	public void Switchability () {
-		//switch when press the switch button
 		if (abilityUnlocked[abilityNum] == true) {
-
-
-			for (int i = 0; i < abilities.Length; i++){
-				abilities[i].SetActive(false);
+			if (Input.GetButtonDown("Switch")) {
+				SetSwitchedAbility();
 			}
-			abilities[abilityNum].SetActive(true);
-			CheckMode();
-		} else {
-			print ("thiss ability is still locked");
-		}	
+		} 	
+	}
+
+	public void SetSwitchedAbility () {
+		for (int i = 0; i < abilities.Length; i++){
+			abilities[i].SetActive(false);
+		}
+		abilities[abilityNum].SetActive(true);
+		CheckMode();
 	}
 
 	void CheckMode () {
@@ -61,7 +63,6 @@ public class AbilitySwitchScript : MonoBehaviour {
 		}
 
 		GetAbilityImg();
-		Switchability();
 	}
 
 	public void SetAbilityImg () {
