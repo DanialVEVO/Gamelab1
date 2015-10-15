@@ -3,76 +3,77 @@ using System.Collections;
  
 public class CharacterMovement : MonoBehaviour{
  
-        private RaycastHit theHit;
-        public float            forwardDis = 1;
-        public float            moveSpeed;
-		public float            rayDis = 1;
-        private Rigidbody       rb;
-        public int				maxJump = 1;
-		public int				jumpReset = 1;
-        public int				jumpCount = 1;
-		public int				jumpCost = 1;
-		public float			jumpBoost;
-        public void Start (){
-			rb = gameObject.GetComponent<Rigidbody>();
-        }
- 
-        public void Update (){       
-			Movement();
-        }
- 
-        public void Movement(){
- 
-                if(Input.GetAxis("Vertical")> 0){
-                        Debug.DrawRay(transform.position, transform.forward, Color.green);
-                        if(Physics.Raycast(transform.position , transform.forward , forwardDis)){      
-                                Debug.Log("Hit Front");
-                        }
-                                else{
-                                        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
- 
-                                }
- 
-                }
-                if(Input.GetAxis("Vertical")< 0){
-                        if(Physics.Raycast(transform.position , -transform.forward , forwardDis)){
-                                Debug.Log("Hit Back");
-                        }
-                                else{
-                                        transform.Translate(-Vector3.forward * moveSpeed * Time.deltaTime);
- 
-                                }
- 
-                }
-                if(Input.GetAxis("Horizontal")> 0){
-                        if(Physics.Raycast(transform.position , transform.right , forwardDis)){
-                                Debug.Log("Hit Right");
-                        }
-                                else{
-                                        transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
- 
-                                }
- 
-                }
-                if(Input.GetAxis("Horizontal")< 0){
-                        if(Physics.Raycast(transform.position , -transform.right , forwardDis)){
-                                Debug.Log("Hit Left");
-                        }
-                                else{
-                                        transform.Translate(-Vector3.right * moveSpeed * Time.deltaTime);
- 
-                                }
-                }
+    private RaycastHit		theHit;
+	public float            forwardDis = 0.6f;
+	public float            rayDis = 1f;
+    private Rigidbody       rb;
+	public PlayerStats		playerStats;
 
-				if(jumpCount <= 0){
-					if(Physics.Raycast(transform.position , -transform.up , rayDis)){
-						jumpCount = jumpReset;
-					}
-				}
 
-				if(Input.GetButtonDown("Jump") && jumpCount <= maxJump){
-                    		rb.velocity = new Vector3(0,jumpBoost,0);
-							jumpCount -= jumpCost;
-				}                
+    public void Start (){
+		rb = gameObject.GetComponent<Rigidbody>();
+		playerStats = new PlayerStats();
+    }
+
+    public void Update (){  
+		print (playerStats.jumpCount);
+		Movement();
+    }
+
+	public void MovementReset(){
+		playerStats = new PlayerStats();
+	}
+
+    public void Movement(){
+
+        if(Input.GetAxis("Vertical")> 0){
+            Debug.DrawRay(transform.position, transform.forward, Color.green);
+            if(Physics.Raycast(transform.position , transform.forward , forwardDis)){      
+                Debug.Log("Hit Front");
+            }
+            else{
+                transform.Translate(Vector3.forward * playerStats.moveSpeed * Time.deltaTime);
+			}
 		}
+
+        if(Input.GetAxis("Vertical")< 0){
+            if(Physics.Raycast(transform.position , -transform.forward , forwardDis)){
+                Debug.Log("Hit Back");
+            }
+            else{
+				transform.Translate(-Vector3.forward * playerStats.moveSpeed * Time.deltaTime);
+			}
+		}
+
+        if(Input.GetAxis("Horizontal")> 0){
+        	if(Physics.Raycast(transform.position , transform.right , forwardDis)){
+                Debug.Log("Hit Right");
+        	}
+            else{
+				transform.Translate(Vector3.right * playerStats.moveSpeed * Time.deltaTime);
+            }
+        }
+
+        if(Input.GetAxis("Horizontal")< 0){
+	        if(Physics.Raycast(transform.position , -transform.right , forwardDis)){
+                Debug.Log("Hit Left");
+            }
+            else{
+				transform.Translate(-Vector3.right * playerStats.moveSpeed * Time.deltaTime);
+        	}
+        }
+
+		if(playerStats.jumpCount > 0){
+			if(Physics.Raycast(transform.position , -transform.up , rayDis)){
+				playerStats.jumpCount = 0;
+			}
+		}
+
+		if(Input.GetButtonDown("Jump")){
+			if( playerStats.jumpCount < playerStats.maxJump){
+	            rb.velocity = new Vector3(0,playerStats.jumpBoost,0);
+				playerStats.jumpCount ++;
+			}
+		}                
+	}
 }

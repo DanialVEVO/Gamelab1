@@ -12,7 +12,7 @@ public class AstronautAbility : MonoBehaviour {
 	public	Rigidbody 	rbPlayer;
 	public	float		astroDrag = 1.25f;
 	public	float		astroSpeed = 4.8f;
-	public	float		astroBoost = 15f;
+	public	float		astroJumpBoost = 15f;
 	public	int			astroJumps = 2;
 
 	// Use this for initialization
@@ -27,8 +27,9 @@ public class AstronautAbility : MonoBehaviour {
 
 	public void SetAstroMovement() {
 		rbPlayer.drag = astroDrag;
-		player.GetComponent<CharacterMovement>().moveSpeed = astroSpeed; 
-		player.GetComponent<CharacterMovement>().jumpCount = astroJumps;
-
+		player.GetComponent<CharacterMovement>().playerStats.moveSpeed = astroSpeed; 
+		player.GetComponent<CharacterMovement>().playerStats.jumpCount = astroJumps;
+		player.GetComponent<CharacterMovement>().playerStats.jumpBoost = astroJumps;
+	
 	}
 }
