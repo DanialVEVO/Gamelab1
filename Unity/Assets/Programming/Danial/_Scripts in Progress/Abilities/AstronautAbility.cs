@@ -2,6 +2,7 @@
  * Astronaut Ability Script
  * Scripted by Danial
  */
+
 using UnityEngine;
 using System.Collections;
 
@@ -29,7 +30,8 @@ public class AstronautAbility : MonoBehaviour {
 		rbPlayer.drag = astroDrag;
 		player.GetComponent<CharacterMovement>().playerStats.moveSpeed = astroSpeed; 
 		player.GetComponent<CharacterMovement>().playerStats.jumpCount = astroJumps;
-		player.GetComponent<CharacterMovement>().playerStats.jumpBoost = astroJumps;
+		player.GetComponent<CharacterMovement>().playerStats.jumpReset = astroJumps;
+		player.GetComponent<CharacterMovement>().playerStats.jumpBoost = astroJumpBoost;
 	
 	}
 }
