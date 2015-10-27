@@ -8,23 +8,23 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class ManaScript : MonoBehaviour {
-
+	
 	public AbilitySwitchScript abilitySwitchScr;
-
+	
 	public Slider manaBar;
 	public float manaValue;
 	private float maxMana;
-
+	
 	public float manaRegenTimer;
 	private float manaRegenTimerRes;
 	public float manaRegenGain;
-
+	
 	public float manaUseTimer;
 	private float manaUseTimerRes;
 	public float manaUseLose;
-
+	
 	public AudioClip emptyMana;
-
+	
 	void Start() {
 		manaBar = GameObject.Find("Mana Bar").GetComponent<Slider>();
 		manaValue = manaBar.value;
@@ -32,13 +32,12 @@ public class ManaScript : MonoBehaviour {
 		manaRegenTimerRes = manaRegenTimer;
 		manaUseTimerRes = manaUseTimer;
 	}
-
+	
 	void Update() {
 		GainManaOverTime();
 		LoseManaOverTime();
-		print (manaValue);
 	}
-
+	
 	public void UseMana(float manaUsed) {
 		if (manaValue >= manaUsed) {
 			manaValue -= manaUsed;
@@ -47,7 +46,7 @@ public class ManaScript : MonoBehaviour {
 		}
 		manaBar.value = manaValue;
 	}
-
+	
 	public void GainMana(float manaGain) {
 		if (manaValue <= maxMana - manaGain) {
 			manaValue += manaGain;
@@ -56,12 +55,12 @@ public class ManaScript : MonoBehaviour {
 		}
 		manaBar.value = manaValue;
 	}
-
+	
 	public void GainManaOverTime() {
 		if (abilitySwitchScr.inNormalMode) { 
 			if (maxMana >  manaValue + manaRegenGain){
 				manaRegenTimer -= Time.deltaTime;
-
+				
 				if (manaRegenTimer <= 0) {
 					manaValue += manaRegenGain;
 					manaBar.value = manaValue;
@@ -75,12 +74,12 @@ public class ManaScript : MonoBehaviour {
 			manaRegenTimer = manaRegenTimerRes;
 		}
 	}
-
+	
 	public void LoseManaOverTime() {
 		if (!abilitySwitchScr.inNormalMode) { 
 			if (manaValue > manaUseLose){
 				manaUseTimer -= Time.deltaTime;
-
+				
 				if (manaUseTimer <= 0) {
 					manaValue -= manaUseLose;
 					manaBar.value = manaValue;
@@ -92,9 +91,7 @@ public class ManaScript : MonoBehaviour {
 				abilitySwitchScr.SetSwitchedAbility();
 				abilitySwitchScr.GetAbilityImg();
 			} 
-		}
-		
+		}	
 	}
-
-
+	
 }

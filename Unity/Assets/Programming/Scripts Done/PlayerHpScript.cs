@@ -10,12 +10,12 @@ using UnityEngine.UI;
 
 
 public class PlayerHpScript : MonoBehaviour {
-	public int totalMaxHP;
-	public int curMaxHearths;
+	public int totalMaxHP = 16;
+	public int curMaxHearths = 8;
 	public int curHP;
 	public int maxHP;
-    public int life;
-	public int startMaxHearts;
+	public int life = 3;
+	public int startMaxHearts = 8;
 	static public int shield = 1;
 	public Text lifeText;
 	public List<GameObject> heartSpots = new List<GameObject>();
