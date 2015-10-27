@@ -1,4 +1,4 @@
-﻿/* 7S_???_001
+﻿/* 7S_PUA_001
  * Pickup Abilities Script
  * Scripted by Chantal
  */
@@ -12,50 +12,38 @@ public class CollectAbilitiesScript : MonoBehaviour {
 	//public GameObject pickupEffect;
 	public AbilitySwitchScript abilitySwitchScr;
 	public Sprite unlockedAbilityIcon;
+
 	public float floatHeight;
-	public Vector3 floatStartPos;
-	public bool moveUp;
-
-	public Vector3 floatPos1;
-	public Vector3 floatPos2;
+	private Vector3 floatStartPos;
+	public bool floatUp;
 	public float floatSpeed;
+	public float rotationSpeed;
 
-	public float floatY1;
-	public float floatY2;
-
+	public AbilityGuideScript abilityGuideScr;
+	
 	void Start () {
 		floatStartPos = transform.position;
 	}
 
 	void Update () {
 		StandbyInScene();
-
 	}
-	
+
 	void StandbyInScene () {
+		if (transform.position.y >= floatStartPos.y + floatHeight) {
+			floatUp = false;
+		}
+		if (transform.position.y <= floatStartPos.y) {
+			floatUp = true;
+		}
 
-//		if (moveUp) {
-//			if (transform.position.y <= floatStartPos.y + floatHeight){
-//				transform.position += new Vector3 (0, 1, 0);
-//			} else {
-//				moveUp = false;
-//			}
-//		}  else {
-//			if (transform.position.y == floatStartPos.y) {
-//				moveUp = true;
-//			} else {
-//				transform.position += new Vector3 (0, -1, 0);
-//			}
-//		}
-
-		//float floatSpeedTime = (Time.time) / floatSpeed ;
-		transform.position = new Vector3(0, Mathf.Lerp(floatY1, floatY2, Time.time), 0);
-
-		//transform.position = Vector3.Slerp(floatPos1, floatPos2, floatSpeedTime);
-
-
-		//floating
-		//rotating	
+		if (floatUp) {
+			transform.position += new Vector3 (0, 1 * floatSpeed * Time.deltaTime, 0);
+		} else {
+			transform.position += new Vector3 (0, -1 * floatSpeed * Time.deltaTime, 0);
+		}
+	
+		transform.RotateAround(transform.position, transform.up, rotationSpeed * Time.deltaTime);	
 	}
 	
 	void UnlockAbility () {
@@ -72,6 +60,7 @@ public class CollectAbilitiesScript : MonoBehaviour {
 	void OnTriggerEnter (Collider col) {
 		if (col.gameObject.tag == "Player"){
 			UnlockAbility();
+			abilityGuideScr.OpenAbilityGuide(abilityId);
 			PickupEffects();
 		}
 	}
