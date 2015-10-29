@@ -43,6 +43,11 @@ public class Camera_Controller : MonoBehaviour {
 //		print(bodyRotateY);
 	print(bodyRotateX);
 		cameraTarget.Rotate(0, bodyRotateX * Time.deltaTime, 0);
+		if(!Input.GetMouseButton (0)){
+			float targetRotAngle = cameraTarget.eulerAngles.y;
+			float cameraRotAngle = transform.eulerAngles.y;
+			x = Mathf.LerpAngle(cameraRotAngle,targetRotAngle,lerpSpeed * Time.deltaTime);
+		}
 		CamMovement();
 
 
