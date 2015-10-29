@@ -18,7 +18,6 @@ public class Unit : Grid {
 		if(target.position != oldTargetPos){
 			PathRequestManager.RequestPath(transform.position,target.position, OnPathFound);
 			oldTargetPos = target.position;
-		//print("timer");
 		}
 		StartCoroutine(Timer());
 	}
@@ -27,20 +26,8 @@ public class Unit : Grid {
 		oldTargetPos = target.position;
 		PathRequestManager.RequestPath(transform.position,target.position, OnPathFound);
 		StartCoroutine(Timer());
-		
-		//target = GameObject.FindWithTag("Player");
 
 	}
-	// private void ComparePos (Vector3 posA,Vector3 posB){
-	// 	int compare = posA.CompareTo(posB);
-	// 	return compare;
-	// 	}
-	// void Update (){
-	// 	if(Input.GetButtonDown("Fire1")){
-	// 		StartCoroutine(Timer());
-	// 	}
-	// }
-
 	
 	public void OnPathFound(Vector3[] newPath, bool pathSuccessful) {
 		if (pathSuccessful) {
@@ -68,7 +55,7 @@ public class Unit : Grid {
 		}
 	}
 
-	public void OnDrawGizmos() {
+	public void Update() {
 		if (path != null) {
 			for (int i = targetIndex; i < path.Length; i ++) {
 				Gizmos.color = Color.black;
