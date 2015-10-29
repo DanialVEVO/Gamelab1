@@ -41,8 +41,25 @@ public class Camera_Controller : MonoBehaviour {
 	void LateUpdate () {
 		bodyRotateX = (Input.GetAxis ("Mouse X") * bodyRotateMult);
 //		print(bodyRotateY);
-//		print(bodyRotateX);
+	print(bodyRotateX);
 		cameraTarget.Rotate(0, bodyRotateX * Time.deltaTime, 0);
+		CamMovement();
+
+
+
+	}
+
+	private static float ClampAngle(float angle, float min, float max){
+		if (angle < -360) {
+			angle += 360;
+		}
+		if (angle > 360) {
+			angle -= 360;
+		}
+		return Mathf.Clamp (angle, min, max);
+
+	}
+	void CamMovement(){
 
 		if (Input.GetMouseButton (0)) {
 			x += Input.GetAxis("Mouse X") * mouseXSpeedMod;
@@ -79,18 +96,6 @@ public class Camera_Controller : MonoBehaviour {
 
 		transform.rotation = rotation;
 		transform.position = position;
-
-	}
-
-	private static float ClampAngle(float angle, float min, float max){
-		if (angle < -360) {
-			angle += 360;
-		}
-		if (angle > 360) {
-			angle -= 360;
-		}
-		return Mathf.Clamp (angle, min, max);
-
 	}
 
 }
