@@ -8,11 +8,11 @@ using System.Collections;
 
 public class MoveLevelScript : MonoBehaviour {
 
-	public int levelId;
+	public int nextLevelId;
 
 	void OnCollisionEnter (Collision coll) {
 		if (coll.gameObject.tag == "Player"){
-			Application.LoadLevel(levelId);
+			Application.LoadLevel(nextLevelId);
 		}
 	}
 }
