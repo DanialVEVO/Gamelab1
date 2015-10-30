@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/* 7S_CHC_001
+ * Player HP Script
+ * Scripted by Danial
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class PlayerStats {

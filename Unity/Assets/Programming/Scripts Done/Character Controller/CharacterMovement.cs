@@ -1,3 +1,7 @@
+/* 7S_CHC_001
+ * Player HP Script
+ * Scripted by Robert & Danial
+ */
 using UnityEngine;
 using System.Collections;
 
