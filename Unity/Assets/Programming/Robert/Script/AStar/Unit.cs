@@ -55,7 +55,7 @@ public class Unit : Grid {
 		}
 	}
 
-	public void Update() {
+	public void OnDrawGizmos() {
 		if (path != null) {
 			for (int i = targetIndex; i < path.Length; i ++) {
 				Gizmos.color = Color.black;
