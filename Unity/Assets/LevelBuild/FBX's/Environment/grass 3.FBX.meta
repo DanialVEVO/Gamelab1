@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e4523d174c6ece247bafd769e174234b
-timeCreated: 1447662865
+guid: db633a51518fabf4a93530b043fc6ec1
+timeCreated: 1447754371
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,8 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: GRASS2
+    4300000: GRASS3
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
