@@ -14,7 +14,7 @@ public class AstronautAbility : MonoBehaviour {
 	public	float		astroDrag = 1.25f;
 	public	float		astroSpeed = 4.8f;
 	public	int			astroJumps = 2;
-	public	float		astroJumpBoost = 10f;
+	public	float		astroJumpBoost = 12f;
 	
 	// Use this for initialization
 	public void Start () {

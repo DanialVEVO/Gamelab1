@@ -15,10 +15,10 @@ public class KnightAbility : MonoBehaviour {
 	public float		knightDamage;
 	
 	
-	public	float		knightDrag = 0.75f;
-	public	float		knightSpeed = 4.6f;
+	public	float		knightDrag = 0f;
+	public	float		knightSpeed = 4f;
 	public	int			knightJumps = 1;
-	public	float		knightJumpBoost = 10f;
+	public	float		knightJumpBoost = 6f;
 	
 	// Use this for initialization
 	void Start () {
