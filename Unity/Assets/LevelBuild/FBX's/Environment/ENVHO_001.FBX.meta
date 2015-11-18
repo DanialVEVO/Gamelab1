@@ -1,37 +1,16 @@
 fileFormatVersion: 2
-guid: 40742b4d5bba7c042866d2bf669ad2d8
-timeCreated: 1447758060
+guid: 920a0e4ae2f67994cb75d7cd2f57e090
+timeCreated: 1447845850
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Box001
-    100004: Box002
-    100006: Huis
-    100008: Huis001
-    100010: huis2
     400000: //RootNode
-    400002: Box001
-    400004: Box002
-    400006: Huis
-    400008: Huis001
-    400010: huis2
-    2300000: Box001
-    2300002: Box002
-    2300004: Huis
-    2300006: Huis001
-    2300008: huis2
-    3300000: Box001
-    3300002: Box002
-    3300004: Huis
-    3300006: Huis001
-    3300008: huis2
-    4300000: Box001
-    4300002: huis2
-    4300004: Huis
-    4300006: Huis001
-    4300008: Box002
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Huis
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
