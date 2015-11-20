@@ -14,6 +14,9 @@ public class EnemiesManagerScript: MonoBehaviour {
 	public List<int> enemiesAliveID = new List<int>();
 	public List<Vector3> enemiesPos = new List<Vector3>();
 	private Transform enemiesListInScene;
+	private Transform spawnedEnemiesList;
+
+	public int spawnID;
 	
 	/* enemiesAlive IDs
 	 * 0 = Dead
@@ -26,7 +29,14 @@ public class EnemiesManagerScript: MonoBehaviour {
 	void Awake () {
 		DontDestroyOnLoad(transform.gameObject);
 	}
-	
+
+	void Start () {
+		enemiesListInScene = GameObject.FindWithTag("Enemies List").transform;
+		FillEnemiesInGameList();
+		FillVariables();
+	//	SpawnedEnemies();
+	}
+
 	void OnLevelWasLoaded(int levelID) {
 		enemiesInGame.Clear();
 		enemiesAliveID.Clear();
@@ -37,10 +47,11 @@ public class EnemiesManagerScript: MonoBehaviour {
 		FillVariables();			
 	}
 	
-	void Start () {
-		enemiesListInScene = GameObject.FindWithTag("Enemies List").transform;
-		FillEnemiesInGameList();
-		FillVariables();
+	public void SpawnedEnemies(){
+	//	spawnedEnemiesList = GameObject.Find("SpawnedEnemiesList" + spawnID).transform;
+	//	spawnedEnemiesList.SetParent(transform);
+	//	FillEnemiesInGameList();
+	//	FillVariables();
 	}
 	
 	public void FillEnemiesInGameList () {
