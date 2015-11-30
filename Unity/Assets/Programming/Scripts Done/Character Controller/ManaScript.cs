@@ -1,4 +1,4 @@
-﻿/* 7S_Mana_001
+﻿ /* 7S_Mana_001
  * Mana Script
  * Scripted by Chantal
  */
