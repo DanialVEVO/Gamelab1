@@ -20,16 +20,28 @@ public class AbilitySwitchScript : MonoBehaviour {
 	public ManaScript manaScr;
 	public float minManaNeed;
 	public Sprite[] abilityImgSprArr = new Sprite[5];
-	
-	void Start () {
-		abilityUnlocked[0] = true;
-		SetSwitchedAbility(0);
-		SetAbilitieSpr();
+
+	void OnLevelWasLoaded(int levelID) {
+		if (levelID >= 1){
+			FindAbilityObjects();
+			abilityUnlocked[0] = true;
+			SetSwitchedAbility(0);
+			SetAbilitieSpr();
+		}
 	}
 	
 	void Update() {
 		SetAbilityImg();
 		SwitchAbility();
+	}
+
+	void FindAbilityObjects(){
+		Transform playerAbilities = GameObject.FindWithTag("Player").transform.Find("Abilities");
+		abilities[0] = playerAbilities.Find("Default").gameObject;
+		abilities[1] = playerAbilities.Find("Knight").gameObject;
+		abilities[2] = playerAbilities.Find("Hero").gameObject;
+		abilities[3] = playerAbilities.Find("Cowboy").gameObject;
+		abilities[4] = playerAbilities.Find("Astronaunt").gameObject;
 	}
 
 	public void SetAbilitieSpr(){
