@@ -16,7 +16,7 @@ public class PlayerStats {
 	public int				jumpReset = 1;
 	public float			jumpBoost = 10f;
 	public int				jumpCount = 0;
-	public int				jumpCost = 1;
+	public int				jumpCost = 0;
 	
 	// Use this for initialization
 	void Start () {

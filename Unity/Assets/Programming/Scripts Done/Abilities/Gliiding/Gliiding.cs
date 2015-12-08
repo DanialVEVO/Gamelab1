@@ -3,13 +3,13 @@ using System.Collections;
 
 public class Gliiding : MonoBehaviour {
 
-	private Rigidbody 	rb;
+	public Rigidbody 	rb;
 
 	public 	float 		oldMass;
 	public 	float 		newMass;
 
 	void Start (){
-		rb =  GetComponent<Rigidbody>();
+//		rb =  GetComponent<Rigidbody>();
 		oldMass = rb.mass;
 	}
 	

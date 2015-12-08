@@ -21,13 +21,15 @@ public class AbilitySwitchScript : MonoBehaviour {
 	public float minManaNeed;
 	public Sprite[] abilityImgSprArr = new Sprite[5];
 
-	void OnLevelWasLoaded(int levelID) {
-		if (levelID >= 1){
+//	void OnLevelWasLoaded(int levelID) {
+	void Start() {
+//		if (levelID >= 1){
 			FindAbilityObjects();
 			abilityUnlocked[0] = true;
 			SetSwitchedAbility(0);
 			SetAbilitieSpr();
-		}
+			GetAbilityImg();
+//		}
 	}
 	
 	void Update() {

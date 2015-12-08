@@ -15,7 +15,7 @@ public class KnightAbility : MonoBehaviour {
 	public float		knightDamage;
 	
 	
-	public	float		knightDrag = 0f;
+	public	float		knightDrag = 0.75f;
 	public	float		knightSpeed = 4f;
 	public	int			knightJumps = 1;
 	public	float		knightJumpBoost = 6f;
@@ -27,7 +27,11 @@ public class KnightAbility : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Shield();	
+		Shield();
+		if(Input.GetButtonUp("Switch")){
+			print ("yo ben knight");
+			SetKnightMovement();
+		}
 	}
 	
 	void Shield () {
