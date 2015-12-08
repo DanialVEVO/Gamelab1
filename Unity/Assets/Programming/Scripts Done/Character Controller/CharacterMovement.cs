@@ -13,7 +13,6 @@ public class CharacterMovement : MonoBehaviour{
 	private Rigidbody       rb;
 	public PlayerStats		playerStats;
 	public bool				jumpAllow = true;
-	public float 			downDis;
 	
 	
 	public void Start (){
@@ -76,10 +75,11 @@ public class CharacterMovement : MonoBehaviour{
 				playerStats.jumpCount ++;
 			}
 		}
+	}
+	
+	void OnCollisionEnter(Collision collision){
 		if(playerStats.jumpCount > 0){
-			if(Physics.Raycast(transform.position , -transform.up , downDis)){
-				playerStats.jumpCount = 0;
-			}
+			playerStats.jumpCount = 0;
 		}
 	}
 }
