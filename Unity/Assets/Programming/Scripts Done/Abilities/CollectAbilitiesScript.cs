@@ -6,43 +6,18 @@
 using UnityEngine;
 using System.Collections;
 
-public class CollectAbilitiesScript : MonoBehaviour {
+public class CollectAbilitiesScript : FloatingObjectsScript {
 
 	public int abilityId;
 	public AbilitySwitchScript abilitySwitchScr;
 	public AbilityGuideScript abilityGuideScr;
-	public float floatHeight;
-	private Vector3 floatStartPos;
-	public bool floatUp;
-	public float floatSpeed;
-	public float rotationSpeed;
+	public SpawnEnemiesScript spawnEnemiesScr;
 	//public GameObject pickupEffect;
-	
-	void Start () {
-		floatStartPos = transform.position;
-	}
 
 	void Update () {
-		StandbyInScene();
+		FloatingObject();
 	}
 
-	void StandbyInScene () {
-		if (transform.position.y >= floatStartPos.y + floatHeight) {
-			floatUp = false;
-		}
-		if (transform.position.y <= floatStartPos.y) {
-			floatUp = true;
-		}
-
-		if (floatUp) {
-			transform.position += new Vector3 (0, 1 * floatSpeed * Time.deltaTime, 0);
-		} else {
-			transform.position += new Vector3 (0, -1 * floatSpeed * Time.deltaTime, 0);
-		}
-	
-		transform.RotateAround(transform.position, transform.up, rotationSpeed * Time.deltaTime);	
-	}
-	
 	void UnlockAbility () {
 		abilitySwitchScr.abilityUnlocked[abilityId] = true;
 		abilitySwitchScr.SetAbilitieSpr();
@@ -57,9 +32,9 @@ public class CollectAbilitiesScript : MonoBehaviour {
 	void OnTriggerEnter (Collider col) {
 		if (col.gameObject.tag == "Player"){
 			UnlockAbility();
+			spawnEnemiesScr.SpawnEnemies();
 			abilityGuideScr.OpenAbilityGuide(abilityId);
 			PickupEffects();
 		}
 	}
-	
 }

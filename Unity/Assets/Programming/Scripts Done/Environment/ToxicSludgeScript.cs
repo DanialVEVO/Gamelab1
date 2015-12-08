@@ -9,21 +9,24 @@ using System.Collections;
 public class ToxicSludgeScript : MonoBehaviour {
 
 	public PlayerHpScript playerHpScr;
-	//public Movement movementScr;
-	public int toxicDmg;
-	public float toxicDmgTimer;
-	float toxicDmgTimerRes;
-	float toxicMoveSpeed;
-	float normalMoveSpeed;
+	public PlayerStats playerStats;
+	public CharacterMovement characterMovementScr;
+	public int toxicDmg = 1;
+	public float toxicDmgTimer = 1;
+	public float moveSpeedDecrease = 2;
+
+	private float toxicDmgTimerRes;
+	private float toxicMoveSpeed;
+	private float normalMoveSpeed;
 
 	void Start() {
 		toxicDmgTimerRes = toxicDmgTimer;
-	//	normalMoveSpeed = movementScr.moveSpeed;
-	//	toxicMoveSpeed = movementScr.moveSpeed / 2;
+		normalMoveSpeed = characterMovementScr.playerStats.moveSpeed;
+		toxicMoveSpeed = characterMovementScr.playerStats.moveSpeed / moveSpeedDecrease;
 	}
 
 	public void ToxicSpeed() {
-	//	movementScr.moveSpeed = toxicMoveSpeed;
+		characterMovementScr.playerStats.moveSpeed = toxicMoveSpeed;
 	}
 
 	public void GetToxicDmg() {
@@ -34,15 +37,16 @@ public class ToxicSludgeScript : MonoBehaviour {
 		}
 	}
 
-	public void OnTriggerStay(Collider col) {
+	public void OnCollisionEnter(Collision col) {
 		if (col.gameObject.tag == "Player") {
+			print("yoyo");
 			ToxicSpeed();
 			GetToxicDmg();
 		}
 	}
 
-	public void OnTriggerExit() {
+	public void OnCollisionExit() {
 		toxicDmgTimer = toxicDmgTimerRes;
-		//movementScr.moveSpeed = normalMoveSpeed;
+		characterMovementScr.playerStats.moveSpeed = normalMoveSpeed;
 	}
 }

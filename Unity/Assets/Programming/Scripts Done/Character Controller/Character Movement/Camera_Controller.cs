@@ -40,8 +40,6 @@ public class Camera_Controller : MonoBehaviour {
 
 	void LateUpdate () {
 		bodyRotateX = (Input.GetAxis ("Mouse X") * bodyRotateMult);
-//		print(bodyRotateY);
-	print(bodyRotateX);
 		cameraTarget.Rotate(0, bodyRotateX * Time.deltaTime, 0);
 		if(!Input.GetMouseButton (0)){
 			float targetRotAngle = cameraTarget.eulerAngles.y;

@@ -22,6 +22,7 @@ public class GuiScript : MonoBehaviour {
 	public MenuPanels menuPanels;
 	public GameObject[] menuObjArray;
 	public bool inPause;
+	public SaveLoadGameScript saveLoadGameScr;
 
 	void Update() {
 		PanelSwitchActive();
@@ -36,25 +37,25 @@ public class GuiScript : MonoBehaviour {
 	void PanelSwitchActive() {
 		MenuOff();
 		switch (menuPanels) {
-			case (MenuPanels)0:
+			case MenuPanels.MainMenu:
 				menuObjArray[0].SetActive(true);
 				break;
-			case (MenuPanels)1:
+			case MenuPanels.GameMenu:
 				menuObjArray[1].SetActive(true);
 				break;
-			case (MenuPanels)2:
+			case MenuPanels.Pause:
 				menuObjArray[2].SetActive(true);
 				break;
-			case (MenuPanels)3:
+			case MenuPanels.Options:
 				menuObjArray[3].SetActive(true);
 				break;
-			case (MenuPanels)4:
+			case MenuPanels.GameOptions:
 				menuObjArray[4].SetActive(true);
 				break;
-			case (MenuPanels)5:
+			case MenuPanels.Credits:
 				menuObjArray[5].SetActive(true);
 				break;
-			case (MenuPanels)6:
+			case MenuPanels.HelpScreen:
 				menuObjArray[6].SetActive(true);
 				break;
 		}
@@ -75,17 +76,17 @@ public class GuiScript : MonoBehaviour {
 	}
 
 	public void StartSavedGame() {
-		//??
+		saveLoadGameScr.LoadGame();
 	}
 
 	public void SwitchPauseMode() {
 		if (Input.GetButtonDown("Pause")) {
-			if (inPause == false && menuPanels == (MenuPanels)7) {
-				menuPanels = (MenuPanels)2;
+			if (inPause == false && menuPanels == MenuPanels.GamePlay) {
+				menuPanels = MenuPanels.Pause;
 				Time.timeScale = 0;
 				inPause = true;
 			} else {
-				menuPanels = (MenuPanels)7;
+				menuPanels = MenuPanels.GamePlay;
 				Time.timeScale = 1;
 				inPause = false;
 			}

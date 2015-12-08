@@ -6,17 +6,15 @@
 using UnityEngine;
 using System.Collections;
 
-public class MeleeDmgScript : MonoBehaviour {
-
-	public AiHpScript aiHPScr;
+public class MeleeDmgScript : KnockBackScript {
+	
 	public int dmg;
 	public Animation attackAnim;
 	public AudioClip attackSound;
 	public GameObject attackParticle;
 
-
-	public void GiveDmg() {
-		aiHPScr.GetDmg(dmg);
+	public void GiveDmg(GameObject enemy) {
+		enemy.GetComponent<AiHpScript>().GetDmg(dmg);
 		attackAnim.Play();
 		GetComponent<AudioSource>().PlayOneShot(attackSound);
 		Instantiate(attackParticle, transform.position, Quaternion.identity);
@@ -24,10 +22,8 @@ public class MeleeDmgScript : MonoBehaviour {
 
 	void OnCollisionEnter(Collision coll) {
 		if (coll.gameObject.tag == "Enemy") {
-			GiveDmg();
+			GiveDmg(coll.gameObject);
+			KnockBack(coll);
 		}
 	}
-
-
-
 }
