@@ -6,7 +6,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TntExplosionScript : MonoBehaviour {
+public class TntExplosionScript : KnockBackScript {
 	
 	public float explodeTimer;
 	public float destroyTime;
@@ -40,6 +40,7 @@ public class TntExplosionScript : MonoBehaviour {
 			player = GameObject.FindWithTag("Player");	
 			if (Vector3.Distance(transform.position, player.transform.position) <= dmgDistance) {
 				player.GetComponent<PlayerHpScript>().GetDmg(dmg);
+				KnockBack(player.GetComponent<Collision>());
 			}
 		} 
 	}
@@ -49,6 +50,7 @@ public class TntExplosionScript : MonoBehaviour {
 			enemy = GameObject.FindWithTag("Enemy");		
 			if (Vector3.Distance(transform.position, enemy.transform.position) <= dmgDistance) {
 				enemy.GetComponent<AiHpScript>().GetDmg(dmg);
+				KnockBack(enemy.GetComponent<Collision>());
 			}
 		} 
 	}

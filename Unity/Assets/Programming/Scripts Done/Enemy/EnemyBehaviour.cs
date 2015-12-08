@@ -6,7 +6,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyBehaviour : MonoBehaviour {
+public class EnemyBehaviour : KnockBackScript {
 	public float agroRange;
 	public float attackRange;
 	public int damageValue;
@@ -51,6 +51,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
 	// Functions that influence damage and health
 	void DoDamage() {
-		target.GetComponent<AiHpScript>().GetDmg(damageValue);
+		target.GetComponent<PlayerHpScript>().GetDmg(damageValue);
+		KnockBack(target.GetComponent<Collision>());
 	}
 }

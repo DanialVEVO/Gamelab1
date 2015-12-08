@@ -10,23 +10,33 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveLoadGameScript : MonoBehaviour {
-
-	public PlayerHpScript playerHpScr;
-	public AbilitySwitchScript abilitySwitchScr;
-	public ManaScript manaScr;
-	public EnemiesManagerScript enemiesManagerScr;
-	public PlayerManager playerManagerScr;
-	public Pickup pickupScr;
-
+	
+	private PlayerHpScript playerHpScr;
+	private AbilitySwitchScript abilitySwitchScr;
+	private ManaScript manaScr;
+	private EnemiesManagerScript enemiesManagerScr;
+	private PlayerManager playerManagerScr;
+	private Pickup pickupScr;
+	
 	void Awake () {
 		DontDestroyOnLoad(transform.gameObject);
 	}
-
+	
+	void FindObjects(){
+		playerHpScr = GameObject.Find("testplayer").GetComponent<PlayerHpScript>();
+		abilitySwitchScr = GameObject.Find("AbilitySwitch").GetComponent<AbilitySwitchScript>();
+		manaScr = GameObject.Find("Mana Bar").GetComponent<ManaScript>();
+		enemiesManagerScr = GameObject.Find("enemyManager").GetComponent<EnemiesManagerScript>();
+		playerManagerScr = GameObject.Find("name").GetComponent<PlayerManager>();
+		pickupScr = GameObject.Find("name").GetComponent<Pickup>();
+	}
+	
 	public void SaveGame () {
+		FindObjects();
 		BinaryFormatter bf = new BinaryFormatter();
 		FileStream file = File.Create(Application.persistentDataPath + "/PlayerData.dat");
 		GameData data = new GameData();
-
+		
 		data.levelID = Application.loadedLevel;
 		data.enemies = enemiesManagerScr.enemiesAliveID;
 		enemiesManagerScr.CheckAlive();
@@ -38,18 +48,19 @@ public class SaveLoadGameScript : MonoBehaviour {
 		data.playerPositionX = playerManagerScr.checkpoint.position.x;
 		data.playerPositionY = playerManagerScr.checkpoint.position.y;
 		data.playerPositionZ = playerManagerScr.checkpoint.position.z;
-
+		
 		bf.Serialize(file, data);
 		file.Close();
 	}
-
+	
 	public void LoadGame () {
 		if (File.Exists(Application.persistentDataPath + "/PlayerData.dat")){
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = File.Open(Application.persistentDataPath + "/PlayerData.dat", FileMode.Open);
 			GameData data = (GameData) bf.Deserialize(file); 
-
+			
 			Application.LoadLevel(data.levelID);
+			FindObjects();
 			enemiesManagerScr.enemiesAliveID = data.enemies;
 			enemiesManagerScr.DestroyDead();
 			pickupScr.maxPickupCount = data.collectables;
@@ -60,7 +71,7 @@ public class SaveLoadGameScript : MonoBehaviour {
 			playerHpScr.life = data.playerLevens;
 			manaScr.manaValue = data.playerMana;
 			transform.position = new Vector3(data.playerPositionX, data.playerPositionY, data.playerPositionZ);
-
+			
 			file.Close();
 		}
 	}

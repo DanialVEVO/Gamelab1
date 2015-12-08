@@ -10,6 +10,7 @@ using System.Collections.Generic;
 public class AbilitySwitchScript : MonoBehaviour {
 	
 	public int abilityNum;
+	private int curAbilityNum;
 	public Sprite lockedAbilitySpr;
 	public Sprite[] unlockedAbilitySprArr = new Sprite[5];
 	public GameObject[] AbilityImgsObjArr = new GameObject[3];
@@ -22,7 +23,7 @@ public class AbilitySwitchScript : MonoBehaviour {
 	
 	void Start () {
 		abilityUnlocked[0] = true;
-		SetSwitchedAbility();
+		SetSwitchedAbility(0);
 		SetAbilitieSpr();
 	}
 	
@@ -45,27 +46,33 @@ public class AbilitySwitchScript : MonoBehaviour {
 		if (abilityUnlocked[abilityNum] == true) {
 			if (Input.GetButtonDown("Switch")){
 				if (abilityNum == 0) {
-					SetSwitchedAbility();
+					SetSwitchedAbility(abilityNum);
+				} else if (abilityNum == curAbilityNum) {
+					SetSwitchedAbility(0);
 				} else if (minManaNeed <= manaScr.manaValue) {
-					SetSwitchedAbility();
+					SetSwitchedAbility(abilityNum);
+			
 				}
 			}
 		} 	
 	}
 	
-	public void SetSwitchedAbility () {
+	public void SetSwitchedAbility (int setNum) {
 		for (int i = 0; i < abilities.Length; i++){
 			abilities[i].SetActive(false);
 		}
-		abilities[abilityNum].SetActive(true);
+		abilities[setNum].SetActive(true);
+
 		CheckMode();
 	}
 	
 	void CheckMode () {
 		if (abilities[0].activeInHierarchy){
 			inNormalMode = true;
+			curAbilityNum = 0;
 		} else {
 			inNormalMode = false;
+			curAbilityNum = abilityNum;
 		}
 	}
 	

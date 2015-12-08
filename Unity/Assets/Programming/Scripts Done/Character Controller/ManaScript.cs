@@ -1,4 +1,4 @@
-﻿ /* 7S_Mana_001
+﻿/* 7S_Mana_001
  * Mana Script
  * Scripted by Chantal
  */
@@ -88,7 +88,7 @@ public class ManaScript : MonoBehaviour {
 			}else {
 				manaUseTimer = manaUseTimerRes;
 				abilitySwitchScr.abilityNum = 0;
-				abilitySwitchScr.SetSwitchedAbility();
+				abilitySwitchScr.SetSwitchedAbility(0);
 				abilitySwitchScr.GetAbilityImg();
 			} 
 		}	
