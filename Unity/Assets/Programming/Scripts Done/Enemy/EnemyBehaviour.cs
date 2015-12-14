@@ -12,6 +12,7 @@ public class EnemyBehaviour : KnockBackScript {
 	public int damageValue;
 
 	public Transform target;
+	public Animator anim;
 
 	//connect animations to these values in mecanim
 	public bool attacking;
@@ -34,6 +35,7 @@ public class EnemyBehaviour : KnockBackScript {
 		if (distance < agroRange) {
 			transform.LookAt(target);
 			print("targeted");
+			anim.SetBool("IsAttacking", false);
 			attacking = false;
 			// range of attack
 			if (distance < attackRange) {
@@ -41,14 +43,14 @@ public class EnemyBehaviour : KnockBackScript {
 				attacking = true;*/
 				if (attacking == true) {
 					print("attacking");
+					anim.SetBool("IsAttacking", true);
 					DoDamage();
 					attacking = false;
 				}
 			}
 		}
 	}
-
-
+	
 	// Functions that influence damage and health
 	void DoDamage() {
 		target.GetComponent<PlayerHpScript>().GetDmg(damageValue);
