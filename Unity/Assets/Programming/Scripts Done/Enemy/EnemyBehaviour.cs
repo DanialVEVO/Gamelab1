@@ -6,12 +6,13 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyBehaviour : MonoBehaviour {
+public class EnemyBehaviour : KnockBackScript {
 	public float agroRange;
 	public float attackRange;
 	public int damageValue;
 
 	public Transform target;
+	public Animator anim;
 
 	//connect animations to these values in mecanim
 	public bool attacking;
@@ -34,6 +35,7 @@ public class EnemyBehaviour : MonoBehaviour {
 		if (distance < agroRange) {
 			transform.LookAt(target);
 			print("targeted");
+			anim.SetBool("IsAttacking", false);
 			attacking = false;
 			// range of attack
 			if (distance < attackRange) {
@@ -41,16 +43,17 @@ public class EnemyBehaviour : MonoBehaviour {
 				attacking = true;*/
 				if (attacking == true) {
 					print("attacking");
+					anim.SetBool("IsAttacking", true);
 					DoDamage();
 					attacking = false;
 				}
 			}
 		}
 	}
-
-
+	
 	// Functions that influence damage and health
 	void DoDamage() {
-		target.GetComponent<AiHpScript>().GetDmg(damageValue);
+		target.GetComponent<PlayerHpScript>().GetDmg(damageValue);
+		KnockBack(target.GetComponent<Collision>());
 	}
 }

@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour{
 	private Rigidbody       rb;
 	public PlayerStats		playerStats;
 	public bool				jumpAllow = true;
+	public float 			downDis;
 	
 	
 	public void Start (){
@@ -68,18 +69,18 @@ public class CharacterMovement : MonoBehaviour{
 				transform.Translate(-Vector3.right * playerStats.moveSpeed * Time.deltaTime);
 			}
 		}
-		
+
+		if(playerStats.jumpCount > 0){
+			if(Physics.Raycast(transform.position , -transform.up , downDis)){
+				playerStats.jumpCount = 0;
+			}
+		}
+
 		if(Input.GetButtonDown("Jump")){
 			if( playerStats.jumpCount < playerStats.maxJump){
 				rb.velocity = new Vector3(0,playerStats.jumpBoost,0);
 				playerStats.jumpCount ++;
 			}
-		}
-	}
-	
-	void OnCollisionEnter(Collision collision){
-		if(playerStats.jumpCount > 0){
-			playerStats.jumpCount = 0;
 		}
 	}
 }

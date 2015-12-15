@@ -23,6 +23,11 @@ public class AstronautAbility : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if(Input.GetButtonUp("Switch")){
+			print ("yo ben astro");
+			SetAstroMovement();
+		}
 		
 	}
 	

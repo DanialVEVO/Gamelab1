@@ -14,6 +14,7 @@ public class AiHpScript : MonoBehaviour {
 	public float destroyTime;
 	public AudioClip dyingSound;
 	public GameObject soundManager;
+	public Animator anim;
 
 	void Start() {
 		curHp = maxHP;
@@ -29,6 +30,7 @@ public class AiHpScript : MonoBehaviour {
 
 	public void Die() {
 		Instantiate(deathParticle, transform.position, Quaternion.identity);
+		anim.SetBool("IsDead", true);
 		soundManager.GetComponent<AudioSource>().PlayOneShot(dyingSound);
 		Destroy(gameObject, destroyTime);
     }

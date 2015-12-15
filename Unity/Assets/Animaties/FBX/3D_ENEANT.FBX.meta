@@ -1,0 +1,491 @@
+fileFormatVersion: 2
+guid: 6a4ae3ff084202045b07b13ced1fd4a4
+timeCreated: 1449823029
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: 3D_ENEANT
+    100004: connectBone001
+    100006: connectBone002
+    100008: connectBone003
+    100010: connectBone004
+    100012: connectBone005
+    100014: connectBone006
+    100016: connectBone007
+    100018: connectBone008
+    100020: connectBone009
+    100022: HeadBone
+    100024: LB1
+    100026: LB2
+    100028: LB3
+    100030: LB4
+    100032: LF1
+    100034: LF2
+    100036: LF3
+    100038: LF4
+    100040: LM1
+    100042: LM2
+    100044: LM3
+    100046: LM4
+    100048: lMandible
+    100050: Mainbone
+    100052: RB1
+    100054: RB2
+    100056: RB3
+    100058: RB4
+    100060: RF1
+    100062: RF2
+    100064: RF3
+    100066: RF4
+    100068: RM1
+    100070: RM2
+    100072: RM3
+    100074: RM4
+    100076: rMandible
+    100078: T1
+    100080: T2
+    100082: T3
+    400000: //RootNode
+    400002: 3D_ENEANT
+    400004: connectBone001
+    400006: connectBone002
+    400008: connectBone003
+    400010: connectBone004
+    400012: connectBone005
+    400014: connectBone006
+    400016: connectBone007
+    400018: connectBone008
+    400020: connectBone009
+    400022: HeadBone
+    400024: LB1
+    400026: LB2
+    400028: LB3
+    400030: LB4
+    400032: LF1
+    400034: LF2
+    400036: LF3
+    400038: LF4
+    400040: LM1
+    400042: LM2
+    400044: LM3
+    400046: LM4
+    400048: lMandible
+    400050: Mainbone
+    400052: RB1
+    400054: RB2
+    400056: RB3
+    400058: RB4
+    400060: RF1
+    400062: RF2
+    400064: RF3
+    400066: RF4
+    400068: RM1
+    400070: RM2
+    400072: RM3
+    400074: RM4
+    400076: rMandible
+    400078: T1
+    400080: T2
+    400082: T3
+    4300000: 3D_ENEANT
+    7400000: Walking
+    7400002: Attacking
+    7400004: Death
+    9500000: //RootNode
+    13700000: 3D_ENEANT
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walking
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 55
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 3D_ENEANT
+        weight: 1
+      - path: Mainbone
+        weight: 1
+      - path: Mainbone/connectBone003
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone001
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone001/rMandible
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone002
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone002/lMandible
+        weight: 1
+      - path: Mainbone/connectBone004
+        weight: 1
+      - path: Mainbone/connectBone004/LF4
+        weight: 1
+      - path: Mainbone/connectBone004/LF4/LF3
+        weight: 1
+      - path: Mainbone/connectBone004/LF4/LF3/LF2
+        weight: 1
+      - path: Mainbone/connectBone004/LF4/LF3/LF2/LF1
+        weight: 1
+      - path: Mainbone/connectBone005
+        weight: 1
+      - path: Mainbone/connectBone005/LM4
+        weight: 1
+      - path: Mainbone/connectBone005/LM4/LM3
+        weight: 1
+      - path: Mainbone/connectBone005/LM4/LM3/LM2
+        weight: 1
+      - path: Mainbone/connectBone005/LM4/LM3/LM2/LM1
+        weight: 1
+      - path: Mainbone/connectBone006
+        weight: 1
+      - path: Mainbone/connectBone006/LB4
+        weight: 1
+      - path: Mainbone/connectBone006/LB4/LB3
+        weight: 1
+      - path: Mainbone/connectBone006/LB4/LB3/LB2
+        weight: 1
+      - path: Mainbone/connectBone006/LB4/LB3/LB2/LB1
+        weight: 1
+      - path: Mainbone/connectBone007
+        weight: 1
+      - path: Mainbone/connectBone007/RB4
+        weight: 1
+      - path: Mainbone/connectBone007/RB4/RB3
+        weight: 1
+      - path: Mainbone/connectBone007/RB4/RB3/RB2
+        weight: 1
+      - path: Mainbone/connectBone007/RB4/RB3/RB2/RB1
+        weight: 1
+      - path: Mainbone/connectBone008
+        weight: 1
+      - path: Mainbone/connectBone008/RM4
+        weight: 1
+      - path: Mainbone/connectBone008/RM4/RM3
+        weight: 1
+      - path: Mainbone/connectBone008/RM4/RM3/RM2
+        weight: 1
+      - path: Mainbone/connectBone008/RM4/RM3/RM2/RM1
+        weight: 1
+      - path: Mainbone/connectBone009
+        weight: 1
+      - path: Mainbone/connectBone009/RF4
+        weight: 1
+      - path: Mainbone/connectBone009/RF4/RF3
+        weight: 1
+      - path: Mainbone/connectBone009/RF4/RF3/RF2
+        weight: 1
+      - path: Mainbone/connectBone009/RF4/RF3/RF2/RF1
+        weight: 1
+      - path: Mainbone/T1
+        weight: 1
+      - path: Mainbone/T1/T2
+        weight: 1
+      - path: Mainbone/T1/T2/T3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attacking
+      takeName: Take 001
+      firstFrame: 60
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 3D_ENEANT
+        weight: 1
+      - path: Mainbone
+        weight: 1
+      - path: Mainbone/connectBone003
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone001
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone001/rMandible
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone002
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone002/lMandible
+        weight: 1
+      - path: Mainbone/connectBone004
+        weight: 1
+      - path: Mainbone/connectBone004/LF4
+        weight: 1
+      - path: Mainbone/connectBone004/LF4/LF3
+        weight: 1
+      - path: Mainbone/connectBone004/LF4/LF3/LF2
+        weight: 1
+      - path: Mainbone/connectBone004/LF4/LF3/LF2/LF1
+        weight: 1
+      - path: Mainbone/connectBone005
+        weight: 1
+      - path: Mainbone/connectBone005/LM4
+        weight: 1
+      - path: Mainbone/connectBone005/LM4/LM3
+        weight: 1
+      - path: Mainbone/connectBone005/LM4/LM3/LM2
+        weight: 1
+      - path: Mainbone/connectBone005/LM4/LM3/LM2/LM1
+        weight: 1
+      - path: Mainbone/connectBone006
+        weight: 1
+      - path: Mainbone/connectBone006/LB4
+        weight: 1
+      - path: Mainbone/connectBone006/LB4/LB3
+        weight: 1
+      - path: Mainbone/connectBone006/LB4/LB3/LB2
+        weight: 1
+      - path: Mainbone/connectBone006/LB4/LB3/LB2/LB1
+        weight: 1
+      - path: Mainbone/connectBone007
+        weight: 1
+      - path: Mainbone/connectBone007/RB4
+        weight: 1
+      - path: Mainbone/connectBone007/RB4/RB3
+        weight: 1
+      - path: Mainbone/connectBone007/RB4/RB3/RB2
+        weight: 1
+      - path: Mainbone/connectBone007/RB4/RB3/RB2/RB1
+        weight: 1
+      - path: Mainbone/connectBone008
+        weight: 1
+      - path: Mainbone/connectBone008/RM4
+        weight: 1
+      - path: Mainbone/connectBone008/RM4/RM3
+        weight: 1
+      - path: Mainbone/connectBone008/RM4/RM3/RM2
+        weight: 1
+      - path: Mainbone/connectBone008/RM4/RM3/RM2/RM1
+        weight: 1
+      - path: Mainbone/connectBone009
+        weight: 1
+      - path: Mainbone/connectBone009/RF4
+        weight: 1
+      - path: Mainbone/connectBone009/RF4/RF3
+        weight: 1
+      - path: Mainbone/connectBone009/RF4/RF3/RF2
+        weight: 1
+      - path: Mainbone/connectBone009/RF4/RF3/RF2/RF1
+        weight: 1
+      - path: Mainbone/T1
+        weight: 1
+      - path: Mainbone/T1/T2
+        weight: 1
+      - path: Mainbone/T1/T2/T3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 3D_ENEANT
+        weight: 1
+      - path: Mainbone
+        weight: 1
+      - path: Mainbone/connectBone003
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone001
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone001/rMandible
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone002
+        weight: 1
+      - path: Mainbone/connectBone003/HeadBone/connectBone002/lMandible
+        weight: 1
+      - path: Mainbone/connectBone004
+        weight: 1
+      - path: Mainbone/connectBone004/LF4
+        weight: 1
+      - path: Mainbone/connectBone004/LF4/LF3
+        weight: 1
+      - path: Mainbone/connectBone004/LF4/LF3/LF2
+        weight: 1
+      - path: Mainbone/connectBone004/LF4/LF3/LF2/LF1
+        weight: 1
+      - path: Mainbone/connectBone005
+        weight: 1
+      - path: Mainbone/connectBone005/LM4
+        weight: 1
+      - path: Mainbone/connectBone005/LM4/LM3
+        weight: 1
+      - path: Mainbone/connectBone005/LM4/LM3/LM2
+        weight: 1
+      - path: Mainbone/connectBone005/LM4/LM3/LM2/LM1
+        weight: 1
+      - path: Mainbone/connectBone006
+        weight: 1
+      - path: Mainbone/connectBone006/LB4
+        weight: 1
+      - path: Mainbone/connectBone006/LB4/LB3
+        weight: 1
+      - path: Mainbone/connectBone006/LB4/LB3/LB2
+        weight: 1
+      - path: Mainbone/connectBone006/LB4/LB3/LB2/LB1
+        weight: 1
+      - path: Mainbone/connectBone007
+        weight: 1
+      - path: Mainbone/connectBone007/RB4
+        weight: 1
+      - path: Mainbone/connectBone007/RB4/RB3
+        weight: 1
+      - path: Mainbone/connectBone007/RB4/RB3/RB2
+        weight: 1
+      - path: Mainbone/connectBone007/RB4/RB3/RB2/RB1
+        weight: 1
+      - path: Mainbone/connectBone008
+        weight: 1
+      - path: Mainbone/connectBone008/RM4
+        weight: 1
+      - path: Mainbone/connectBone008/RM4/RM3
+        weight: 1
+      - path: Mainbone/connectBone008/RM4/RM3/RM2
+        weight: 1
+      - path: Mainbone/connectBone008/RM4/RM3/RM2/RM1
+        weight: 1
+      - path: Mainbone/connectBone009
+        weight: 1
+      - path: Mainbone/connectBone009/RF4
+        weight: 1
+      - path: Mainbone/connectBone009/RF4/RF3
+        weight: 1
+      - path: Mainbone/connectBone009/RF4/RF3/RF2
+        weight: 1
+      - path: Mainbone/connectBone009/RF4/RF3/RF2/RF1
+        weight: 1
+      - path: Mainbone/T1
+        weight: 1
+      - path: Mainbone/T1/T2
+        weight: 1
+      - path: Mainbone/T1/T2/T3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
