@@ -13,7 +13,7 @@ public class CharacterMovement : MonoBehaviour{
 	private Rigidbody       rb;
 	public PlayerStats		playerStats;
 	public bool				jumpAllow = true;
-	public float 			downDis;
+	public float 			downDis = 0.6f;
 	
 	
 	public void Start (){
