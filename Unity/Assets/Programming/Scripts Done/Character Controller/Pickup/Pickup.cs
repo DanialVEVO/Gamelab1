@@ -12,6 +12,7 @@ public class Pickup : MonoBehaviour {
 		if(collision.GetComponent<Collider>().tag == "Pickup"){
 			pickupCount ++;
 			//print("pickupCount");
+			collision.GetComponent<FloatingObjectsScript>().DestroyThis();
 		}
 	}
 	void Update (){

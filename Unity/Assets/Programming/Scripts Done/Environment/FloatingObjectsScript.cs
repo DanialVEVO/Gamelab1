@@ -34,4 +34,8 @@ public class FloatingObjectsScript : MonoBehaviour {
 		
 		transform.RotateAround(transform.position, transform.up, rotationSpeed * Time.deltaTime);	
 	}
+
+	public void DestroyThis () {
+		Destroy(gameObject);
+	}
 }
