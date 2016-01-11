@@ -25,14 +25,12 @@ public class UiCollectScript : MonoBehaviour {
 	void Timer () {
 		if(countdownTimer > 1){
 			text.rectTransform.anchoredPosition = Vector2.Lerp(text.rectTransform.anchoredPosition, uiInPosition, .1f);
-			canMoveOut = true;
 			countdownTimer -= Time.deltaTime;
 		}
 
-		if(countdownTimer < 1 && canMoveOut == true){
+		if(countdownTimer < 1 && text.rectTransform.anchoredPosition.x >= uiOutPosition.x-5){
 			text.rectTransform.anchoredPosition = Vector2.Lerp(text.rectTransform.anchoredPosition, uiOutPosition, .1f);
 			if(text.rectTransform.anchoredPosition.x == uiOutPosition.x){
-				canMoveOut = false;
 			}
 		}
 	}
