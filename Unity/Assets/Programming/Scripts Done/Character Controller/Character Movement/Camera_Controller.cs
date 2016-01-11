@@ -23,8 +23,8 @@ public class Camera_Controller : MonoBehaviour {
 	public 		float 		minViewDis = 1 ;
 	public 		float 		caracterHeight = 1;
 
-	public 		int 			zoomRate = 30;
-	public 		int 			lerpSpeed = 10;
+	public 		int 		zoomRate = 2;
+	public 		int 		lerpSpeed = 10;
 
 
 	void Start () {
@@ -79,7 +79,7 @@ public class Camera_Controller : MonoBehaviour {
 
 		Quaternion rotation = Quaternion.Euler (y, x, 0);
 
-		disiredDis -= Input.GetAxis ("Mouse ScrollWheel") * Time.deltaTime * zoomRate * Mathf.Abs (disiredDis);
+		disiredDis -= Input.GetAxis ("Zoom") * Time.deltaTime * zoomRate * Mathf.Abs (disiredDis);
 		disiredDis = Mathf.Clamp (disiredDis, minViewDis, maxViewDis);
 		correctedDis = disiredDis;
 
