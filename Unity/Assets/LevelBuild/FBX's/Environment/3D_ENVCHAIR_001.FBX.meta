@@ -1,57 +1,27 @@
 fileFormatVersion: 2
-guid: 79f4d5fa8a463f34b9dd1d1c93c10188
-timeCreated: 1450173860
+guid: 930c3a0b5d8fde64487cf935d0f9d358
+timeCreated: 1452501901
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: LegoBrick
-    100004: LegoBrick001
-    100006: LegoBrick002
-    100008: LegoBrick003
-    100010: LegoBrick004
-    100012: LegoBrick005
-    100014: LegoBrick006
-    100016: LegoBrick007
-    100018: LegoBrick008
+    100002: Box001
+    100004: Box002
+    100006: Cylinder002
     400000: //RootNode
-    400002: LegoBrick
-    400004: LegoBrick001
-    400006: LegoBrick002
-    400008: LegoBrick003
-    400010: LegoBrick004
-    400012: LegoBrick005
-    400014: LegoBrick006
-    400016: LegoBrick007
-    400018: LegoBrick008
-    2300000: LegoBrick
-    2300002: LegoBrick001
-    2300004: LegoBrick002
-    2300006: LegoBrick003
-    2300008: LegoBrick004
-    2300010: LegoBrick005
-    2300012: LegoBrick006
-    2300014: LegoBrick007
-    2300016: LegoBrick008
-    3300000: LegoBrick
-    3300002: LegoBrick001
-    3300004: LegoBrick002
-    3300006: LegoBrick003
-    3300008: LegoBrick004
-    3300010: LegoBrick005
-    3300012: LegoBrick006
-    3300014: LegoBrick007
-    3300016: LegoBrick008
-    4300000: LegoBrick
-    4300002: LegoBrick001
-    4300004: LegoBrick002
-    4300006: LegoBrick003
-    4300008: LegoBrick004
-    4300010: LegoBrick005
-    4300012: LegoBrick006
-    4300014: LegoBrick007
-    4300016: LegoBrick008
+    400002: Box001
+    400004: Box002
+    400006: Cylinder002
+    2300000: Box001
+    2300002: Box002
+    2300004: Cylinder002
+    3300000: Box001
+    3300002: Box002
+    3300004: Cylinder002
+    4300000: Cylinder002
+    4300002: Box001
+    4300004: Box002
     9500000: //RootNode
   materials:
     importMaterials: 1
