@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c9787f6e30d5c59458a19e557e913b6e
-timeCreated: 1449825639
+guid: 7b47f350f02b92045ab506b121ebcaa7
+timeCreated: 1452593126
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -26,9 +26,10 @@ ModelImporter:
     400016: Bone008
     400018: Cylinder001
     4300000: Cylinder001
-    7400000: Moveing
-    7400002: Attacking
-    7400004: Death
+    7400000: Moving
+    7400002: Attack1
+    7400004: DeathStart
+    7400006: Death
     9500000: //RootNode
     13700000: Cylinder001
   materials:
@@ -52,7 +53,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Moveing
+      name: Moving
       takeName: Take 001
       firstFrame: 0
       lastFrame: 80
@@ -61,7 +62,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -98,7 +99,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Attacking
+      name: Attack1
       takeName: Take 001
       firstFrame: 81
       lastFrame: 124
@@ -107,7 +108,53 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone002
+        weight: 1
+      - path: Bone001/Bone002/Bone003
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004/Bone005
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Cylinder001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: DeathStart
+      takeName: Take 001
+      firstFrame: 125
+      lastFrame: 149
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -146,7 +193,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Death
       takeName: Take 001
-      firstFrame: 125
+      firstFrame: 149
       lastFrame: 150
       wrapMode: 0
       orientationOffsetY: 0
