@@ -9,7 +9,7 @@ using System.Collections;
 public class CowboyAbilityScript : MonoBehaviour {
 
 	public GameObject bullet;
-//	public GameObject shootPartikel;
+	public GameObject shootPartikel;
 //	public AudioClip shootSound;
 //	public Animation shootAnim;
 
@@ -29,7 +29,7 @@ public class CowboyAbilityScript : MonoBehaviour {
 
 	public void Shoot() {
 	//	shootAnim.Play();
-	//	Instantiate(shootPartikel, transform.position, Quaternion.identity);
+		Instantiate(shootPartikel, transform.position, Quaternion.identity);
 		Instantiate(bullet, transform.position, transform.rotation);
 	//	GetComponent<AudioSource>().PlayOneShot(shootSound);
 	}
