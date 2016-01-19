@@ -1,0 +1,37 @@
+Wat moet er in:
+
+Globaal over de game:
+-Status van de game (uitwerking van de game laten zien, vergelijking met eerdere sprints)
+-Professionaliteit en uitstraling van de game
+-Uitwerking HUD, Puzzels, Combat System
+
+
+Groepsdynamiek:
+-Afwezigheid
+-Wat gaat er goed en wat gaat er mis (de groep)
+-Welke problemen hebben we gehad (de game)
+	-Hoe hebben we dat opgelost
+-aanwezigheid laten zien
+
+Art:
+-Renders van characters/props
+-Level renders
+-Unwraps en textures (snel laten zien)
+
+Planning:
+-Lijst van geimplemented assets en geschrapte assets zien
+-Uitleg hoe de planning is verlopen en dingen die beter aangepakt konden worden
+
+UX:
+-Fun 2 play elements (youtube filmpjes maken van shit)
+-Interactie met de speler laten zien van hud/popups/tutorials/hoofdmenu (filmpjes)
+
+QA:
+-Bug reports(stuk of 5)
+-QA document laten zien + uitleg
+
+Development:
+-Uitwerking van game op technisch gebied
+-Uitleg AI systeem
+-Uitleg puzzel
+-Uitleg game mechanics
