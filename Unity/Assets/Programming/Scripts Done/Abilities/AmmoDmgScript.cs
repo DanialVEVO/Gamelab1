@@ -24,7 +24,7 @@ public class AmmoDmgScript : KnockBackScript {
 	void OnCollisionEnter(Collision coll) {
 		if (coll.gameObject.tag == "Enemy") {
 			GiveDmg(coll.gameObject);
-			KnockBack(coll);
+			KnockBack(coll.collider);
 		}
 		Destroy(gameObject);
 	}

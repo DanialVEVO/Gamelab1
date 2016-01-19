@@ -40,7 +40,7 @@ public class TntExplosionScript : KnockBackScript {
 			player = GameObject.FindWithTag("Player");	
 			if (Vector3.Distance(transform.position, player.transform.position) <= dmgDistance) {
 				player.GetComponent<PlayerHpScript>().GetDmg(dmg);
-				KnockBack(player.GetComponent<Collision>());
+				KnockBack(player.GetComponent<Collider>());
 			}
 		} 
 	}
@@ -50,7 +50,7 @@ public class TntExplosionScript : KnockBackScript {
 			enemy = GameObject.FindWithTag("Enemy");		
 			if (Vector3.Distance(transform.position, enemy.transform.position) <= dmgDistance) {
 				enemy.GetComponent<AiHpScript>().GetDmg(dmg);
-				KnockBack(enemy.GetComponent<Collision>());
+				KnockBack(enemy.GetComponent<Collider>());
 			}
 		} 
 	}

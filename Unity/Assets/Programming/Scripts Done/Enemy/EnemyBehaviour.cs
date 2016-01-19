@@ -54,6 +54,6 @@ public class EnemyBehaviour : KnockBackScript {
 	// Functions that influence damage and health
 	void DoDamage() {
 		target.GetComponent<PlayerHpScript>().GetDmg(damageValue);
-		KnockBack(target.GetComponent<Collision>());
+		KnockBack(target.GetComponent<Collider>());
 	}
 }
