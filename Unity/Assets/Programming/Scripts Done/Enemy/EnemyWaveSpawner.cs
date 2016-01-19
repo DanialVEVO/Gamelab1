@@ -4,11 +4,14 @@ using System.Collections.Generic;
 
 public class EnemyWaveSpawner : MonoBehaviour {
 
-public int waveNumber;
+	public int waveNumber;
+	public int maxWaves;
 
 
 	private int enemySpawnCountPerWave = 5;
 	private int spawnCount;
+
+	public int deadEnemys;
 
 
 	public GameObject enemyPrefab;
@@ -22,14 +25,22 @@ public int waveNumber;
 	public bool readyForNextWave = false;
 
 
+
 	public void SpawnWave (){
-		GameObject stufToSpawn;
-		spawnCount = CalculateNumberOfEnemys(enemySpawnCountPerWave);
-		for(int i = 0 ; i <= spawnCount; i++){		
-			stufToSpawn = Instantiate(enemyPrefab, spawnLocations[Random.Range(0, spawnLocations.Length)].position , Quaternion.identity) as GameObject;
-			enemys.Add(stufToSpawn);
+		if(waveNumber <= maxWaves){
+				if(readyForNextWave == true){
+				GameObject stufToSpawn;
+				spawnCount = CalculateNumberOfEnemys(enemySpawnCountPerWave);
+				for(int i = 0 ; i <= spawnCount; i++){		
+					stufToSpawn = Instantiate(enemyPrefab, spawnLocations[Random.Range(0, spawnLocations.Length)].position , Quaternion.identity) as GameObject;
+					enemys.Add(stufToSpawn);
+				}
+				waveNumber ++;
+				readyForNextWave = false;
+			}
+		}else{
+			print("Max Wave Reached");
 		}
-		waveNumber ++;
 	}
 
 	int CalculateNumberOfEnemys (int _enemySpawnCount){
@@ -44,8 +55,11 @@ public int waveNumber;
 				readyForNextWave = false;
 				break;
 			}else{
-				
-
+				deadEnemys ++;
+			}
+			if(deadEnemys >= enemys.Count){
+				readyForNextWave = true;
+				SpawnWave();
 			}
 		}
 	}
