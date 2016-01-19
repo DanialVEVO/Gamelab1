@@ -15,20 +15,15 @@ public class AstronautAbility : MonoBehaviour {
 	public	float		astroSpeed = 4.8f;
 	public	int			astroJumps = 2;
 	public	float		astroJumpBoost = 12f;
-	
-	// Use this for initialization
+
 	public void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
+	void Update () {
 		if(Input.GetButtonUp("Switch")){
-			print ("yo ben astro");
 			SetAstroMovement();
-		}
-		
+		}	
 	}
 	
 	public void SetAstroMovement() {

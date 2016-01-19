@@ -1,0 +1,23 @@
+char:
+8SFX_DMGS_001		Damage			Sound
+8SFX_DEADS_001		Dead			Sound
+8SFX_KILLS_001		Kill			Sound
+
+mob:
+-8SFX_EGS_001		Grasshopper		Sound
+-8SFX_EAS_001		Ant			Sound
+-8SFX_EWS_001		Worm			Sound
+-8SFX_ELS_001		Lego			Sound
+
+ability:
++8SFX_KSLAS_001		Knight Slash		Sound[]
++8SFX_ALSS_001		Astro Lightsaber	Sound[]
++8SFX_SHITS_001		Superman Hit		Sound[]
++8SFX_CSHOS_001		Cowboy Shot		Sound[]
++8SFX_???_001		Cowboy throw 		Sound
+
++8SFX_AJUMPS_001	Astro Jump		Sound
++8SFX_SGLS_001		Superman Glide		Sound
+
+----------------------
+

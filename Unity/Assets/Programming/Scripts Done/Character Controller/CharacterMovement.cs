@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour{
 	public PlayerStats		playerStats;
 	public bool				jumpAllow = true;
 	public float 			downDis = 0.6f;
+	public Animator 		anim;
 	
 	
 	public void Start (){
@@ -22,7 +23,6 @@ public class CharacterMovement : MonoBehaviour{
 	}
 	
 	public void Update (){  
-		print (playerStats.jumpCount);
 		Movement();
 	}
 	
@@ -70,14 +70,22 @@ public class CharacterMovement : MonoBehaviour{
 			}
 		}
 
+		if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0){
+			anim.SetBool("Walking", true);
+		} else {
+			anim.SetBool("Walking", false);
+		}
+
 		if(playerStats.jumpCount > 0){
 			if(Physics.Raycast(transform.position , -transform.up , downDis)){
 				playerStats.jumpCount = 0;
+				anim.SetBool("Jump", false);
 			}
 		}
 
 		if(Input.GetButtonDown("Jump")){
 			if( playerStats.jumpCount < playerStats.maxJump){
+				anim.SetBool("Jump", true);
 				rb.velocity = new Vector3(0,playerStats.jumpBoost,0);
 				playerStats.jumpCount ++;
 			}

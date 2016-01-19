@@ -7,42 +7,39 @@ using UnityEngine;
 using System.Collections;
 
 public class KnightAbility : MonoBehaviour {
-	
-	public	GameObject	player;	
-	
+
+	public GameObject	player;	
+	public Animator 	anim;
+
 	public float 		manaDrain;
 	public int 			normalizeDmgMultiplier;
 	public float		knightDamage;
-	
 	
 	public	float		knightDrag = 0.75f;
 	public	float		knightSpeed = 4f;
 	public	int			knightJumps = 1;
 	public	float		knightJumpBoost = 6f;
-	
-	// Use this for initialization
+
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		Shield();
 		if(Input.GetButtonUp("Switch")){
-			print ("yo ben knight");
 			SetKnightMovement();
 		}
 	}
 	
 	void Shield () {
-		if (Input.GetButtonDown("Function")) {
-			print("defending");
+		if (Input.GetButtonDown("Skill")) {
+			anim.SetBool("Block", true);
 			PlayerHpScript.shield = 0;
 		}
 		
-		if (Input.GetButtonUp("Function")) {
-			print("not defending");
+		if (Input.GetButtonUp("Skill")) {
 			PlayerHpScript.shield = normalizeDmgMultiplier;
+			anim.SetBool("Block", false);
 		}
 	}
 	
