@@ -1,38 +1,38 @@
-﻿// using UnityEngine;
-// using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 
-// public class EnemyWaveSpawner : MonoBehaviour {
+public class EnemyWaveSpawner : MonoBehaviour {
 
-// public int waveNumber;
-
-
-// 	private int enemySpawnCountPerWave = 5;
-// 	private int spawnCount;
+public int waveNumber;
 
 
-// 	public GameObject enemyPrefab;
+	private int enemySpawnCountPerWave = 5;
+	private int spawnCount;
 
 
-// 	public Transform[] spawnLocations;
+	public GameObject enemyPrefab;
 
 
-// 	public List<GameObject> _list = new List<GameObject>();
+	public Transform[] spawnLocations;
 
 
-// 	public void SpawnWave (){
-// 		GameObject stufToSpawn;
-// 		spawnCount = CalculateNumberOfEnemys(enemySpawnCountPerWave);
-// 		for(int i = 0 ; i <= spawnCount; i++){		
-// 			stufToSpawn = Instantiate(enemyPrefab, spawnLocations[Random.Range(0, spawnLocations.Length).position , Quaternion.identity) as GameObject;
-// 			_list.Add(stufToSpawn);
-// 		}
-// 		waveNumber ++;
-// 	}
+	public List<GameObject> _list = new List<GameObject>();
 
-// 	int CalculateNumberOfEnemys (int _enemySpawnCount){
-// 		int spawnCount = (_enemySpawnCount * waveNumber);
 
-// 		return spawnCount;
-// 	}
+	public void SpawnWave (){
+		GameObject stufToSpawn;
+		spawnCount = CalculateNumberOfEnemys(enemySpawnCountPerWave);
+		for(int i = 0 ; i <= spawnCount; i++){		
+			stufToSpawn = Instantiate(enemyPrefab, spawnLocations[Random.Range(0, spawnLocations.Length).position , Quaternion.identity) as GameObject;
+			_list.Add(stufToSpawn);
+		}
+		waveNumber ++;
+	}
 
-// }
+	int CalculateNumberOfEnemys (int _enemySpawnCount){
+		int spawnCount = (_enemySpawnCount * waveNumber);
+
+		return spawnCount;
+	}
+
+}
