@@ -12,13 +12,26 @@ public class MeleeDmgScript : KnockBackScript {
 	public Animator anim;
 	public AudioClip attackSound;
 	public GameObject attackParticle;
+	public float swordLength = 5f;
+	public RaycastHit hit;
 
 	void Update () {
 		if(Input.GetButtonDown("Fire1")){
 			anim.SetBool("Attack1", true);
+			CheckDmg();
 		} else if (Input.GetButtonUp("Fire1")){
 			anim.SetBool("Attack1", false);
 		}
+	}
+
+	public void CheckDmg(){
+		//Debug.DrawRay(transform.position, transform.forward, Color.green);
+		///if(Physics.Raycast(transform.position, transform.forward, out hit, swordLength)){
+		//	if (hit.gameObject.tag == "Enemy"){
+		//		GiveDmg(hit.gameObject);
+		//		KnockBack(coll);
+		//	}
+		//}
 	}
 
 	public void GiveDmg(GameObject enemy) {
@@ -27,10 +40,10 @@ public class MeleeDmgScript : KnockBackScript {
 		Instantiate(attackParticle, transform.position, Quaternion.identity);
 	}
 
-	void OnCollisionEnter(Collision coll) {
-		if (coll.gameObject.tag == "Enemy") {
-			GiveDmg(coll.gameObject);
-			KnockBack(coll);
-		}
-	}
+//	void OnCollisionEnter(Collision coll) {
+//		if (coll.gameObject.tag == "Enemy") {
+//			GiveDmg(coll.gameObject);
+//			KnockBack(coll);
+//		}
+//	}
 }
