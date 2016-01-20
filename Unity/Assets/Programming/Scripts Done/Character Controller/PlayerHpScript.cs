@@ -20,6 +20,10 @@ public class PlayerHpScript : MonoBehaviour {
 	public Text lifeText;
 	public List<GameObject> heartSpots = new List<GameObject>();
 	public List<GameObject> activeHeartSpots = new List<GameObject>();
+	public GuiScript guiScr;
+	public GameObject loseLifeObj;
+	public GameObject gameOverObj;
+	private bool dead;
 
 
 	void Start() {
@@ -28,22 +32,26 @@ public class PlayerHpScript : MonoBehaviour {
 		SetHpInList();
 		ShowNewMaxHealth(startMaxHearts);
 		ShowLife();
+		loseLifeObj.SetActive(false);
+		gameOverObj.SetActive(false);
 	}
 
 	public void GetDmg(int dmg) {
-		dmg *= shield;
-		if (curHP - dmg <= 0) {
-			LoseLife();
-		} else {
-			int newHp = curHP - dmg;
-			for (int myHp = curHP; myHp > newHp; myHp--) {
-				curHP--;
-				for (int i = curMaxHearths; i * 2 > curHP; i--) {
-					if (curHP % 2 == 1) { //odd numbeers
-						activeHeartSpots[i - 1].GetComponent<HeartFill>().halfHeartArr[1].SetActive(false);
-					}
-					if (curHP % 2 == 0) { //even numbers
-						activeHeartSpots[i - 1].GetComponent<HeartFill>().halfHeartArr[0].SetActive(false);
+		if (!dead){
+			dmg *= shield;
+			if (curHP - dmg <= 0) {
+				Dead();
+			} else {
+				int newHp = curHP - dmg;
+				for (int myHp = curHP; myHp > newHp; myHp--) {
+					curHP--;
+					for (int i = curMaxHearths; i * 2 > curHP; i--) {
+						if (curHP % 2 == 1) { //odd numbeers
+							activeHeartSpots[i - 1].GetComponent<HeartFill>().halfHeartArr[1].SetActive(false);
+						}
+						if (curHP % 2 == 0) { //even numbers
+							activeHeartSpots[i - 1].GetComponent<HeartFill>().halfHeartArr[0].SetActive(false);
+						}
 					}
 				}
 			}
@@ -51,42 +59,47 @@ public class PlayerHpScript : MonoBehaviour {
 	}
 
 	public void HealByAmount(int healAmount) {
-		if (curHP + healAmount >= maxHP) {
-			FullHeal();
-        } else {
-			int newHp = curHP + healAmount;
-			for (int myHp = curHP; myHp < newHp; myHp++) {
-				curHP++;
-				for (int i = 0; i * 2 < curHP; i++) {
-					if (curHP % 2 == 1) { //odd numbeers
-						activeHeartSpots[i].GetComponent<HeartFill>().halfHeartArr[0].SetActive(true);
-					}
-					if (curHP % 2 == 0) { //even numbers
-						activeHeartSpots[i].GetComponent<HeartFill>().halfHeartArr[1].SetActive(true);
+		if (!dead){
+			if (curHP + healAmount >= maxHP) {
+				FullHeal();
+	        } else {
+				int newHp = curHP + healAmount;
+				for (int myHp = curHP; myHp < newHp; myHp++) {
+					curHP++;
+					for (int i = 0; i * 2 < curHP; i++) {
+						if (curHP % 2 == 1) { //odd numbeers
+							activeHeartSpots[i].GetComponent<HeartFill>().halfHeartArr[0].SetActive(true);
+						}
+						if (curHP % 2 == 0) { //even numbers
+							activeHeartSpots[i].GetComponent<HeartFill>().halfHeartArr[1].SetActive(true);
+						}
 					}
 				}
 			}
 		}
-
 	}
 
 	public void LoseLife() {
+		loseLifeObj.SetActive(false);
+		dead = false;
+		life--;
+		ShowLife();
+		FullHeal();
+	}
+
+	public void Dead(){
+		dead = true;
+		guiScr.PanelSwitch(8);
 		if (life > 0) {
-			life--;
-			ShowLife();
-			FullHeal();
+			loseLifeObj.SetActive(true);
 		} else {
-			GameOver();
+			gameOverObj.SetActive(true);
 		}
+
 	}
 
 	public void ShowLife() {
 		lifeText.text = "" + life;
-	}
-
-	public void GameOver() {
-		//??????
-		print("gameover");
 	}
 
 	public void ShowNewMaxHealth(int newCurMaxHearts) {

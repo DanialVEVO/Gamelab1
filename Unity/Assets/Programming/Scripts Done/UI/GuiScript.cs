@@ -16,7 +16,8 @@ public class GuiScript : MonoBehaviour {
 		GameOptions,    // 4
 		Credits,        // 5
 		HelpScreen,     // 6
-		GamePlay        // 7
+		GamePlay,       // 7
+		Dying			// 8
 	}
 	
 	public MenuPanels menuPanels;
@@ -91,7 +92,7 @@ public class GuiScript : MonoBehaviour {
 				menuPanels = MenuPanels.Pause;
 				Time.timeScale = 0;
 				inPause = true;
-			} else {
+			} else if (inPause == true){
 				menuPanels = MenuPanels.GamePlay;
 				Time.timeScale = 1;
 				inPause = false;
