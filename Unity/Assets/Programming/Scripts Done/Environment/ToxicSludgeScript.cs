@@ -15,14 +15,17 @@ public class ToxicSludgeScript : MonoBehaviour {
 	public float toxicDmgTimer = 1;
 	public float moveSpeedDecrease = 2;
 
+	private PlayerStats defaulyPlayerStats;
 	private float toxicDmgTimerRes;
 	private float toxicMoveSpeed;
 	private float normalMoveSpeed;
+	private bool inToxic;
 
 	void Start() {
+		defaulyPlayerStats = new PlayerStats();
 		toxicDmgTimerRes = toxicDmgTimer;
-		normalMoveSpeed = characterMovementScr.playerStats.moveSpeed;
-		toxicMoveSpeed = characterMovementScr.playerStats.moveSpeed / moveSpeedDecrease;
+		normalMoveSpeed = defaulyPlayerStats.moveSpeed;
+		toxicMoveSpeed = defaulyPlayerStats.moveSpeed / moveSpeedDecrease;
 	}
 
 	public void ToxicSpeed() {
@@ -37,15 +40,21 @@ public class ToxicSludgeScript : MonoBehaviour {
 		}
 	}
 
-	public void OnCollisionEnter(Collision col) {
-		if (col.gameObject.tag == "Player") {
-			print("yoyo");
-			ToxicSpeed();
+	void Update(){
+		if (inToxic){
 			GetToxicDmg();
 		}
 	}
 
+	public void OnCollisionStay(Collision col) {
+		if (col.gameObject.tag == "Player") {
+			inToxic = true;
+			ToxicSpeed();
+		}
+	}
+
 	public void OnCollisionExit() {
+		inToxic = false;
 		toxicDmgTimer = toxicDmgTimerRes;
 		characterMovementScr.playerStats.moveSpeed = normalMoveSpeed;
 	}
