@@ -36,7 +36,7 @@ public class CharacterMovement : MonoBehaviour{
 		
 		if(Input.GetAxis("Vertical")> 0){
 			Debug.DrawRay(transform.position + rayOffset, transform.forward, Color.green);
-			if(Physics.Raycast(transform.position , transform.forward , forwardDis)){      
+			if(Physics.Raycast(transform.position + rayOffset, transform.forward , forwardDis)){      
 				Debug.Log("Hit Front");
 			}
 			else{
