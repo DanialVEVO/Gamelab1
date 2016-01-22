@@ -15,6 +15,7 @@ public class CharacterMovement : MonoBehaviour{
 	public bool				jumpAllow = true;
 	public float 			downDis = 0.6f;
 	public Animator 		anim;
+	public Vector3			rayOffset = new Vector3(0, 0.6f, 0);
 	
 	
 	public void Start (){
@@ -34,7 +35,7 @@ public class CharacterMovement : MonoBehaviour{
 	public void Movement(){
 		
 		if(Input.GetAxis("Vertical")> 0){
-			Debug.DrawRay(transform.position, transform.forward, Color.green);
+			Debug.DrawRay(transform.position + rayOffset, transform.forward, Color.green);
 			if(Physics.Raycast(transform.position , transform.forward , forwardDis)){      
 				Debug.Log("Hit Front");
 			}
@@ -44,7 +45,7 @@ public class CharacterMovement : MonoBehaviour{
 		}
 		
 		if(Input.GetAxis("Vertical")< 0){
-			if(Physics.Raycast(transform.position , -transform.forward , forwardDis)){
+			if(Physics.Raycast(transform.position + rayOffset, -transform.forward , forwardDis)){
 				Debug.Log("Hit Back");
 			}
 			else{
@@ -53,7 +54,7 @@ public class CharacterMovement : MonoBehaviour{
 		}
 		
 		if(Input.GetAxis("Horizontal")> 0){
-			if(Physics.Raycast(transform.position , transform.right , forwardDis)){
+			if(Physics.Raycast(transform.position + rayOffset, transform.right , forwardDis)){
 				Debug.Log("Hit Right");
 			}
 			else{
@@ -62,7 +63,7 @@ public class CharacterMovement : MonoBehaviour{
 		}
 		
 		if(Input.GetAxis("Horizontal")< 0){
-			if(Physics.Raycast(transform.position , -transform.right , forwardDis)){
+			if(Physics.Raycast(transform.position + rayOffset, -transform.right , forwardDis)){
 				Debug.Log("Hit Left");
 			}
 			else{

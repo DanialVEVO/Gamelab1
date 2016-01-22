@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		checkpoint = transform;
 	
 	}
 	
