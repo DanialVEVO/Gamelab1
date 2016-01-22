@@ -21,7 +21,8 @@ public class PlayerHpScript : MonoBehaviour {
 	public List<GameObject> heartSpots = new List<GameObject>();
 	public List<GameObject> activeHeartSpots = new List<GameObject>();
 	public GuiScript guiScr;
-	public GameObject loseLifeObj;
+	public Transform player;
+	public PlayerManager playerManagerScr;
 	public GameObject gameOverObj;
 	private bool dead;
 
@@ -32,7 +33,6 @@ public class PlayerHpScript : MonoBehaviour {
 		SetHpInList();
 		ShowNewMaxHealth(startMaxHearts);
 		ShowLife();
-		loseLifeObj.SetActive(false);
 		gameOverObj.SetActive(false);
 	}
 
@@ -80,7 +80,7 @@ public class PlayerHpScript : MonoBehaviour {
 	}
 
 	public void LoseLife() {
-		loseLifeObj.SetActive(false);
+		player.position = playerManagerScr.checkpoint.position;
 		dead = false;
 		life--;
 		ShowLife();
@@ -91,7 +91,7 @@ public class PlayerHpScript : MonoBehaviour {
 		dead = true;
 		guiScr.PanelSwitch(8);
 		if (life > 0) {
-			loseLifeObj.SetActive(true);
+			LoseLife();
 		} else {
 			gameOverObj.SetActive(true);
 		}
