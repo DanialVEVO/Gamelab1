@@ -11,7 +11,7 @@ public class QuicksandScript : MonoBehaviour {
 	public PlayerHpScript playerHpScr;
 	public Rigidbody playerRigidbody;
 	public int sinkDmg = 1;
-	public int sinkSlow = 25;
+	public int sinkSlow = 40;
 	public float sinkDmgTimer = 1;
 
 	private float defaultDrag;

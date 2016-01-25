@@ -24,6 +24,7 @@ public class PlayerHpScript : MonoBehaviour {
 	public Transform player;
 	public PlayerManager playerManagerScr;
 	public GameObject gameOverObj;
+	public SoundManagerScr soundManagerScr;
 	private bool dead;
 
 
@@ -94,6 +95,7 @@ public class PlayerHpScript : MonoBehaviour {
 			LoseLife();
 		} else {
 			gameOverObj.SetActive(true);
+			soundManagerScr.Dead();
 		}
 
 	}
