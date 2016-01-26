@@ -24,6 +24,7 @@ public class GuiScript : MonoBehaviour {
 	public GameObject[] menuObjArray;
 	public bool inPause;
 	public SaveLoadGameScript saveLoadGameScr;
+	public AudioClip btSound;
 	
 	void Update() {
 		PanelSwitchActive();
@@ -89,14 +90,20 @@ public class GuiScript : MonoBehaviour {
 	public void SwitchPauseMode() {
 		if (Input.GetButtonDown("Pause")) {
 			if (inPause == false && menuPanels == MenuPanels.GamePlay) {
+				PlayMenuSound();
 				menuPanels = MenuPanels.Pause;
 				Time.timeScale = 0;
 				inPause = true;
 			} else if (inPause == true){
+				PlayMenuSound();
 				menuPanels = MenuPanels.GamePlay;
 				Time.timeScale = 1;
 				inPause = false;
 			}
 		}
+	}
+
+	public void PlayMenuSound(){
+		GetComponent<AudioSource>().PlayOneShot(btSound);
 	}
 }
