@@ -64,7 +64,9 @@ public class Camera_Controller : MonoBehaviour {
 
 	}
 	void CamMovement(){
-		if (Input.GetButton ("Fire1")) {
+		bool lol = true;
+		if (lol) {
+			print("Works");
 			x += Input.GetAxis("Mouse X") * mouseXSpeedMod;
 			y -= Input.GetAxis("Mouse Y") * mouseYSpeedMod;
 		}
