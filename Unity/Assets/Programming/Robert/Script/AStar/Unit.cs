@@ -12,9 +12,18 @@ public class Unit : Grid {
 	int targetIndex;
 	public float timersecs;
 
+
+	void Start() {
+		oldTargetPos = target.position;
+		//PathRequestManager.RequestPath(transform.position,target.position, OnPathFound);
+		StartCoroutine(Timer());
+
+	}
+
 	IEnumerator Timer (){
 
 		yield return new WaitForSeconds(timersecs);
+		//print("Corotine");
 		if(target.position != oldTargetPos){
 			PathRequestManager.RequestPath(transform.position,target.position, OnPathFound);
 			oldTargetPos = target.position;
@@ -22,12 +31,6 @@ public class Unit : Grid {
 		StartCoroutine(Timer());
 	}
 
-	void Start() {
-		oldTargetPos = target.position;
-		PathRequestManager.RequestPath(transform.position,target.position, OnPathFound);
-		StartCoroutine(Timer());
-
-	}
 	
 	public void OnPathFound(Vector3[] newPath, bool pathSuccessful) {
 		if (pathSuccessful) {

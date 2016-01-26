@@ -18,6 +18,8 @@ public class Pathfinding : MonoBehaviour {
 
 	public void StartFindPath(Vector3 startPos, Vector3 targetPos) {
 		StartCoroutine(FindPath(startPos,targetPos));
+		//print(startPos);
+		//print(targetPos);
 	}
 
 	IEnumerator FindPath(Vector3 startPos, Vector3 targetPos) {
