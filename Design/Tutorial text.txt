@@ -1,0 +1,40 @@
+=normal text= 
+walk with wasd
+look around with your mouse
+attack with your left mouse button
+jump with by pressing the space bar
+zoom in and out with [ ] keys
+==
+
+=knight text=
+You have picked up the knight ability!
+Transform into a knight by scrolling with your middle mouse button
+and pressing the left alt key
+press F to deflect incoming attacks!
+transform back by pressing the left alt key
+==
+
+=astro ability=
+You have picked up the astronaut ability!
+Transform into a astronaut by scrolling with your middle mouse button
+and pressing the left alt key
+Press the spacebar twice to preform a double jump!
+transform back by pressing the left alt key
+==
+
+=cowboy ability=
+You have picked up the cowboy ability!
+Transform into a cowboy scrolling with your middle mouse button
+and pressing the left alt key
+shoot at enemies with your left mouse button
+press F to throw a bundle of TNT
+transform back by pressing the left alt key
+==
+
+=super hero ability=
+You have picked up the super hero ability!
+Transform into a super hero scrolling with your middle mouse button
+and pressing the left alt key
+Glide through the sky by holding the jump button
+transform back by pressing the left alt key
+==
