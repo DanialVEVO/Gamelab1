@@ -78,7 +78,7 @@ public class CharacterMovement : MonoBehaviour{
 		}
 
 		if(playerStats.jumpCount > 0){
-			if(Physics.Raycast(transform.position , -transform.up , downDis)){
+			if(Physics.Raycast(transform.position + rayOffset , -transform.up , downDis)){
 				playerStats.jumpCount = 0;
 				anim.SetBool("Jump", false);
 			}
