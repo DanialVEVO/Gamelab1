@@ -7,6 +7,7 @@ using System.Collections;
 
 public class SoundManagerScr : MonoBehaviour {
 
+	//public AudioSource audioSource;
 	public AudioClip[] bgm;
 	/* 0 = menu
 	 * 1 = lvl1
@@ -17,18 +18,21 @@ public class SoundManagerScr : MonoBehaviour {
 
 	void Awake () {
 		DontDestroyOnLoad(gameObject);
-		GetComponent<AudioSource>().PlayOneShot(bgm[0]);
+		GetComponent<AudioSource>().clip = bgm[0];
+		GetComponent<AudioSource>().Play();
 	}
 
 	void OnLevelWasLoaded(int levelID) {
 		for (int i = 0; i < bgm.Length; i++){
 			if (levelID == i){
-				GetComponent<AudioSource>().PlayOneShot(bgm[i]);
+				GetComponent<AudioSource>().clip = bgm[i];
+				GetComponent<AudioSource>().Play();
 			}
 		}
 	}
 
 	public void Dead() {
-		GetComponent<AudioSource>().PlayOneShot(bgm[4]);
+		GetComponent<AudioSource>().clip = bgm[4];
+		GetComponent<AudioSource>().Play();
 	}
 }
