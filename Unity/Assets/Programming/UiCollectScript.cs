@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UiCollectScript : MonoBehaviour {
 
-	public float	countdownTimer = 8f;
+	public float	countdownTimer;
 	public Vector2	uiInPosition = new Vector2(30, 0);
 	public Vector2	uiOutPosition = new Vector2(-180, 0);
 	public bool		canMoveOut = false;
