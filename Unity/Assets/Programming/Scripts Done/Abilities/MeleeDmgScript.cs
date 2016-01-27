@@ -17,6 +17,7 @@ public class MeleeDmgScript : KnockBackScript {
 	void Update () {
 		if(Input.GetButtonDown("Fire1")){
 			anim.SetBool("Attack1", true);
+			GetComponent<AudioSource>().PlayOneShot(attackSound);
 			CheckDmg();
 		} else if (Input.GetButtonUp("Fire1")){
 			anim.SetBool("Attack1", false);
@@ -35,6 +36,6 @@ public class MeleeDmgScript : KnockBackScript {
 
 	public void GiveDmg(GameObject enemy) {
 		enemy.GetComponent<AiHpScript>().GetDmg(dmg);
-		//GetComponent<AudioSource>().PlayOneShot(attackSound);
+		GetComponent<AudioSource>().PlayOneShot(attackSound);
 	}
 }

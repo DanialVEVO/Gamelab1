@@ -13,6 +13,8 @@ public class CowboyAbilityScript : MonoBehaviour {
 	public AudioClip shootSound;
 	public Animator anim;
 	public GameObject bomb;
+	public Transform gunSpawnShot;
+	public Transform throwTntSpot;
 //	public AudioClip throwSound;
 
 	void Update() {
@@ -31,14 +33,14 @@ public class CowboyAbilityScript : MonoBehaviour {
 
 	public void Shoot() {
 		anim.SetBool("Shoot", true);
-		Instantiate(shootPartikel, transform.position, Quaternion.identity);
-		Instantiate(bullet, transform.position, transform.rotation);
+		Instantiate(shootPartikel, gunSpawnShot.position, Quaternion.identity);
+		Instantiate(bullet, gunSpawnShot.position, transform.rotation);
 		GetComponent<AudioSource>().PlayOneShot(shootSound);
 	}
 
 	public void Throw() {
 		anim.SetBool("Throw", true);
-		Instantiate(bomb, transform.position, transform.rotation);
+		Instantiate(bomb, throwTntSpot.position, transform.rotation);
 	//	GetComponent<AudioSource>().PlayOneShot(throwSound);
 	}
 

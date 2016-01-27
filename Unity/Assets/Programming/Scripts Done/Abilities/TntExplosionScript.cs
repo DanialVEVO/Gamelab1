@@ -32,7 +32,7 @@ public class TntExplosionScript : KnockBackScript {
 
 	void ExplodeEffects () {
 		Instantiate(explodeEffect, transform.position, Quaternion.identity);
-		//GetComponent<AudioSource>().PlayOneShot(explodeSound);
+		GetComponent<AudioSource>().PlayOneShot(explodeSound);
 	}
 
 	void DoPlayerDmg () {

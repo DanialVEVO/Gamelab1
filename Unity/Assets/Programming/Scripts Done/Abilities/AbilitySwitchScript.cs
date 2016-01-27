@@ -38,7 +38,7 @@ public class AbilitySwitchScript : MonoBehaviour {
 	}
 
 	void FindAbilityObjects(){
-		Transform playerAbilities = GameObject.FindWithTag("Player").transform.Find("Abilities");
+		Transform playerAbilities = GameObject.Find("PlayerAbilities").transform;
 		abilities[0] = playerAbilities.Find("Default").gameObject;
 		abilities[1] = playerAbilities.Find("Knight").gameObject;
 		abilities[2] = playerAbilities.Find("Hero").gameObject;
