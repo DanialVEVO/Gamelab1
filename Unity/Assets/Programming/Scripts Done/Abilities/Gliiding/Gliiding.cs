@@ -7,6 +7,7 @@ public class Gliiding : MonoBehaviour {
 	public Animator 	anim;
 	public 	float 		oldMass;
 	public 	float 		newMass;
+	public GameObject 	glideEffect;
 
 	void Start (){
 		oldMass = rb.mass;
@@ -15,6 +16,7 @@ public class Gliiding : MonoBehaviour {
 	void Update () {
 		if(Input.GetButton("Jump")){
 			anim.SetBool("Glide", true);
+			Instantiate(glideEffect, transform.position, Quaternion.identity);
 			rb.mass = newMass;
 		} 	
 		if(!Input.GetButton("Jump")){

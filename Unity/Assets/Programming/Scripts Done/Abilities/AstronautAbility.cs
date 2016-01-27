@@ -15,15 +15,23 @@ public class AstronautAbility : MonoBehaviour {
 	public	float		astroSpeed = 4.8f;
 	public	int			astroJumps = 2;
 	public	float		astroJumpBoost = 12f;
+	public 	GameObject	jumpEffect;
+	private	Vector3		particlePos;
+	public  float 		particleSpawnHeight = 2.5f;
 
 	public void Start () {
-		
+
 	}
 
 	void Update () {
 		if(Input.GetButtonUp("Switch")){
 			SetAstroMovement();
 		}	
+		if(Input.GetButtonDown("Jump")){
+			particlePos = transform.position;
+			particlePos.y += particleSpawnHeight;
+			Instantiate(jumpEffect, particlePos, Quaternion.identity);
+		}
 	}
 	
 	public void SetAstroMovement() {

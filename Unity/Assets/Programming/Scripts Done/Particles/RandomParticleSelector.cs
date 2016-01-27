@@ -11,11 +11,14 @@ public class RandomParticleSelector : MonoBehaviour {
 
 	public ParticleSystem[] comicParticle = new ParticleSystem[3];
 	public int selectedInt;
+	private Vector3 spawnPos;
+	public float spawnHeight = 1;
 	
 	public void ParticleRandomizer (){
 		selectedInt = Random.Range(0,3);
-		print (selectedInt);
-		Instantiate(comicParticle[selectedInt]);
+		spawnPos = transform.position;
+		spawnPos.y += spawnHeight;
+		Instantiate(comicParticle[selectedInt], spawnPos, Quaternion.identity);
 	}
 
 }

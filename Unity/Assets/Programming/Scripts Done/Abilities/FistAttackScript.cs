@@ -11,7 +11,7 @@ public class FistAttackScript : KnockBackScript {
 	public Animator anim;
 	public RandomParticleSelector randomParticle;
 	public AudioClip[] punchSound;
-	public float swordLength = 1f;
+	public float punchRange = 0.5f;
 	public RaycastHit hit;
 	
 	void Update () {
@@ -27,7 +27,7 @@ public class FistAttackScript : KnockBackScript {
 	
 	public void CheckDmg(){
 		Debug.DrawRay(transform.position, transform.forward, Color.green);
-		if(Physics.Raycast(transform.position, transform.forward, out hit, swordLength)){
+		if(Physics.Raycast(transform.position, transform.forward, out hit, punchRange)){
 			if (hit.transform.tag == "Enemy"){
 				GiveDmg(hit.transform.gameObject);
 				KnockBack(hit.transform.GetComponent<Collider>());
