@@ -23,8 +23,8 @@ public class PlayerHpScript : MonoBehaviour {
 	public GuiScript guiScr;
 	public Transform player;
 	public PlayerManager playerManagerScr;
-	public GameObject gameOverObj;
 	public SoundManagerScr soundManagerScr;
+	public GameOverScript gameOverScr;
 	private bool dead;
 
 
@@ -32,7 +32,6 @@ public class PlayerHpScript : MonoBehaviour {
 		FillCanvasVariables();
 		maxHP = curMaxHearths * 2;
 		curHP = maxHP;
-		gameOverObj.SetActive(false);
 		SetHpInList();
 		ShowNewMaxHealth(startMaxHearts);
 		ShowLife();
@@ -41,8 +40,8 @@ public class PlayerHpScript : MonoBehaviour {
 	void FillCanvasVariables(){
 		lifeText = GameObject.Find("life txt").GetComponent<Text>();
 		guiScr = GameObject.Find("Menu").GetComponent<GuiScript>();
-		gameOverObj = GameObject.Find("GameOver Img");
 		soundManagerScr = GameObject.Find("BGM Manager").GetComponent<SoundManagerScr>();
+		gameOverScr = GameObject.Find("Dying").GetComponent<GameOverScript>();;
 	}
 
 	public void GetDmg(int dmg) {
@@ -102,7 +101,7 @@ public class PlayerHpScript : MonoBehaviour {
 		if (life > 0) {
 			LoseLife();
 		} else {
-			gameOverObj.SetActive(true);
+			gameOverScr.ShowGameOverNotice();
 			soundManagerScr.Dead();
 		}
 

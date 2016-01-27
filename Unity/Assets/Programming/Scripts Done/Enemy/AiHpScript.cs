@@ -30,7 +30,7 @@ public class AiHpScript : MonoBehaviour {
 
 	public void Die() {
 		Instantiate(deathParticle, transform.position, Quaternion.identity);
-		//anim.SetBool("IsDead", true);
+		anim.SetBool("Dead", true);
 		//soundManager.GetComponent<AudioSource>().PlayOneShot(dyingSound);
 		Destroy(gameObject, destroyTime);
     }

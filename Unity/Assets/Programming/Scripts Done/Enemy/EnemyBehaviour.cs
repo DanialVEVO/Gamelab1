@@ -35,7 +35,7 @@ public class EnemyBehaviour : KnockBackScript {
 		if (distance < agroRange) {
 			transform.LookAt(target);
 			print("targeted");
-			anim.SetBool("IsAttacking", false);
+			anim.SetBool("Attack", false);
 			attacking = false;
 			// range of attack
 			if (distance < attackRange) {
@@ -43,7 +43,7 @@ public class EnemyBehaviour : KnockBackScript {
 				attacking = true;*/
 				if (attacking == true) {
 					print("attacking");
-					anim.SetBool("IsAttacking", true);
+					anim.SetBool("Attack", true);
 					DoDamage();
 					attacking = false;
 				}

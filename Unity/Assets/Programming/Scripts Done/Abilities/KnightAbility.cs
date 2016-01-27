@@ -10,6 +10,7 @@ public class KnightAbility : MonoBehaviour {
 
 	public GameObject	player;	
 	public Animator 	anim;
+	public GameObject 	defenceEffect;
 
 	public float 		manaDrain;
 	public int 			normalizeDmgMultiplier;
@@ -34,6 +35,7 @@ public class KnightAbility : MonoBehaviour {
 	void Shield () {
 		if (Input.GetButtonDown("Skill")) {
 			anim.SetBool("Block", true);
+			Instantiate(defenceEffect, transform.position, Quaternion.identity);
 			PlayerHpScript.shield = 0;
 		}
 		

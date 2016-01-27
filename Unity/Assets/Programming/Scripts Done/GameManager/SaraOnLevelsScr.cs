@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/* 
+ * Scripted by Chantal
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class SaraOnLevelsScr : MonoBehaviour {
