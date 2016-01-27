@@ -29,12 +29,20 @@ public class PlayerHpScript : MonoBehaviour {
 
 
 	void Start() {
+		FillCanvasVariables();
 		maxHP = curMaxHearths * 2;
 		curHP = maxHP;
+		gameOverObj.SetActive(false);
 		SetHpInList();
 		ShowNewMaxHealth(startMaxHearts);
 		ShowLife();
-		gameOverObj.SetActive(false);
+	}
+
+	void FillCanvasVariables(){
+		lifeText = GameObject.Find("life txt").GetComponent<Text>();
+		guiScr = GameObject.Find("Menu").GetComponent<GuiScript>();
+		gameOverObj = GameObject.Find("GameOver Img");
+		soundManagerScr = GameObject.Find("BGM Manager").GetComponent<SoundManagerScr>();
 	}
 
 	public void GetDmg(int dmg) {

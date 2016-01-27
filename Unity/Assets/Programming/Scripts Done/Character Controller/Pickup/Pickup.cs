@@ -11,6 +11,11 @@ public class Pickup : MonoBehaviour {
 	public float 		uiResetTimer;
 	public GameObject	uiCollect;
 
+	void Start () {
+		uiCollect = GameObject.Find("Collectables UI");
+		pickupText = uiCollect.GetComponent<Text>();
+	}
+
 	void OnTriggerEnter (Collider collision){
 		if(collision.GetComponent<Collider>().tag == "Pickup"){
 			uiCollect.GetComponent<UiCollectScript>().countdownTimer = uiResetTimer;
