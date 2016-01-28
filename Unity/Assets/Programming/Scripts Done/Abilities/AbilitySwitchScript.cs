@@ -15,11 +15,14 @@ public class AbilitySwitchScript : MonoBehaviour {
 	public Sprite[] unlockedAbilitySprArr = new Sprite[5];
 	public GameObject[] AbilityImgsObjArr = new GameObject[3];
 	public GameObject[] abilities = new GameObject[5];
+	public Transform player;
 	public bool[] abilityUnlocked = new bool[5];
 	public bool inNormalMode;
 	public ManaScript manaScr;
 	public float minManaNeed;
+	public GameObject switchEffect;
 	public Sprite[] abilityImgSprArr = new Sprite[5];
+	private bool showSwitchEffect = false;
 
 //	void OnLevelWasLoaded(int levelID) {
 	void Start() {
@@ -29,6 +32,8 @@ public class AbilitySwitchScript : MonoBehaviour {
 			SetSwitchedAbility(0);
 			SetAbilitieSpr();
 			GetAbilityImg();
+			player = GameObject.FindWithTag("Player").transform;
+			showSwitchEffect = true;
 //		}
 	}
 	
@@ -65,18 +70,20 @@ public class AbilitySwitchScript : MonoBehaviour {
 					SetSwitchedAbility(0);
 				} else if (minManaNeed <= manaScr.manaValue) {
 					SetSwitchedAbility(abilityNum);
-			
 				}
 			}
 		} 	
 	}
 	
 	public void SetSwitchedAbility (int setNum) {
+		if(showSwitchEffect){
+			Instantiate(switchEffect, player.position, Quaternion.identity);
+		}
+
 		for (int i = 0; i < abilities.Length; i++){
 			abilities[i].SetActive(false);
 		}
 		abilities[setNum].SetActive(true);
-
 		CheckMode();
 	}
 	

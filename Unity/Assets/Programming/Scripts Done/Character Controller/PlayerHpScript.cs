@@ -25,6 +25,9 @@ public class PlayerHpScript : MonoBehaviour {
 	public PlayerManager playerManagerScr;
 	public SoundManagerScr soundManagerScr;
 	public GameOverScript gameOverScr;
+	public GameObject deadEffect;
+	public GameObject getDmgEffect;
+	public Animator anim;
 	private bool dead;
 
 
@@ -47,6 +50,8 @@ public class PlayerHpScript : MonoBehaviour {
 	public void GetDmg(int dmg) {
 		if (!dead){
 			dmg *= shield;
+			anim.SetBool("GetDmg", true);
+			Instantiate(getDmgEffect, transform.position, Quaternion.identity);
 			if (curHP - dmg <= 0) {
 				Dead();
 			} else {
@@ -62,6 +67,7 @@ public class PlayerHpScript : MonoBehaviour {
 						}
 					}
 				}
+				anim.SetBool("GetDmg", false);
 			}
 		}
 	}
@@ -88,6 +94,7 @@ public class PlayerHpScript : MonoBehaviour {
 	}
 
 	public void LoseLife() {
+		anim.SetBool("GetDmg", false);
 		player.position = playerManagerScr.checkpoint.position;
 		dead = false;
 		life--;
@@ -101,10 +108,11 @@ public class PlayerHpScript : MonoBehaviour {
 		if (life > 0) {
 			LoseLife();
 		} else {
+			Instantiate(deadEffect, transform.position, Quaternion.identity);
+			anim.SetBool("Dead", true);
 			gameOverScr.ShowGameOverNotice();
 			soundManagerScr.Dead();
 		}
-
 	}
 
 	public void ShowLife() {

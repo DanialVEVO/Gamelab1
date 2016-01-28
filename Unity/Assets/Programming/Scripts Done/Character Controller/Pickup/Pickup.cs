@@ -10,6 +10,8 @@ public class Pickup : MonoBehaviour {
 
 	public float 		uiResetTimer;
 	public GameObject	uiCollect;
+	public GameObject	pickupEffect;
+	public AudioClip 	pickupSound;
 
 	void Start () {
 		uiCollect = GameObject.Find("Collectables UI");
@@ -18,6 +20,8 @@ public class Pickup : MonoBehaviour {
 
 	void OnTriggerEnter (Collider collision){
 		if(collision.GetComponent<Collider>().tag == "Pickup"){
+			Instantiate(pickupEffect, collision.transform.position, Quaternion.identity);
+			GetComponent<AudioSource>().PlayOneShot(pickupSound);
 			uiCollect.GetComponent<UiCollectScript>().countdownTimer = uiResetTimer;
 			pickupCount ++;
 			//print("pickupCount");
