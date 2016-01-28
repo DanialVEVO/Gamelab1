@@ -14,6 +14,7 @@ public class Unit : Grid {
 
 
 	void Start() {
+		target = GameObject.FindWithTag ("Player").transform ;
 		oldTargetPos = target.position;
 		//PathRequestManager.RequestPath(transform.position,target.position, OnPathFound);
 		StartCoroutine(Timer());
