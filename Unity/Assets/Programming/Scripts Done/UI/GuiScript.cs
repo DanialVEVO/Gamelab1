@@ -74,10 +74,12 @@ public class GuiScript : MonoBehaviour {
 	}
 	
 	public void StartNewGame() {
+		menuPanels = MenuPanels.GamePlay;
 		Application.LoadLevel(1);
 	}
 	
 	public void StartSavedGame() {
+		menuPanels = MenuPanels.GamePlay;
 		saveLoadGameScr.LoadGame();
 	}
 	
