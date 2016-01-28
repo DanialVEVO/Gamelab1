@@ -18,8 +18,6 @@ public class SoundManagerScr : MonoBehaviour {
 
 	void Awake () {
 		DontDestroyOnLoad(gameObject);
-		GetComponent<AudioSource>().clip = bgm[0];
-		GetComponent<AudioSource>().Play();
 	}
 
 	void OnLevelWasLoaded(int levelID) {
