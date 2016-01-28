@@ -72,7 +72,12 @@ public class GuiScript : MonoBehaviour {
 	public void ExitGame() {
 		Application.Quit();
 	}
-	
+
+	public void OpenMainMenu() {
+		menuPanels = MenuPanels.MainMenu;
+		Application.LoadLevel(0);
+	}
+
 	public void StartNewGame() {
 		menuPanels = MenuPanels.GamePlay;
 		Application.LoadLevel(1);

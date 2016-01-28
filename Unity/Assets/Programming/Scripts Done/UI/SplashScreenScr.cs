@@ -13,7 +13,7 @@ public class SplashScreenScr : MonoBehaviour {
 	public GameObject splashScreen;
 	public Sprite[] splashImg;
 	public float logoTimer = 2f;
-	public float splashTimer = 0.5f;
+	public float splashTimer = 1f;
 	public GameObject bgmManager;
 	public AudioClip splashBgm;
 
