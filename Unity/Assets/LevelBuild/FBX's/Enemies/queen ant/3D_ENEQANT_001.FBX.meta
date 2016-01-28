@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: 23d08e512fa78924e879dd206cbf9897
+timeCreated: 1453981751
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: AntQueen
+    100004: Bone001
+    100006: Bone002
+    100008: Bone003
+    100010: Bone004
+    100012: Bone005
+    100014: Bone006
+    100016: Bone007
+    100018: Bone008
+    100020: Bone018
+    100022: Bone019
+    100024: Bone019 1
+    100026: Bone020
+    100028: Bone021
+    100030: Bone021 1
+    100032: Crown
+    100034: HeadBoneL
+    100036: HeadBoneR
+    100038: IK Bugbutt
+    100040: IK LeftFront
+    100042: IK LeftMid
+    100044: IK LeftRear
+    100046: IK RightFront
+    100048: IK RightMid
+    100050: IK RightRear
+    100052: Lfr1
+    100054: Lfr2
+    100056: Lfr3
+    100058: Lfr4
+    100060: Lmid1
+    100062: Lmid2
+    100064: Lmid3
+    100066: Lmid4
+    100068: Lrear1
+    100070: Lrear2
+    100072: Lrear3
+    100074: Lrear4
+    100076: Rfr1
+    100078: Rfr2
+    100080: Rfr3
+    100082: Rfr4
+    100084: Rmid1
+    100086: Rmid2
+    100088: Rmid3
+    100090: Rmid4
+    100092: Rrear1
+    100094: Rrear2
+    100096: Rrear3
+    100098: Rrear4
+    400000: //RootNode
+    400002: AntQueen
+    400004: Bone001
+    400006: Bone002
+    400008: Bone003
+    400010: Bone004
+    400012: Bone005
+    400014: Bone006
+    400016: Bone007
+    400018: Bone008
+    400020: Bone018
+    400022: Bone019
+    400024: Bone019 1
+    400026: Bone020
+    400028: Bone021
+    400030: Bone021 1
+    400032: Crown
+    400034: HeadBoneL
+    400036: HeadBoneR
+    400038: IK Bugbutt
+    400040: IK LeftFront
+    400042: IK LeftMid
+    400044: IK LeftRear
+    400046: IK RightFront
+    400048: IK RightMid
+    400050: IK RightRear
+    400052: Lfr1
+    400054: Lfr2
+    400056: Lfr3
+    400058: Lfr4
+    400060: Lmid1
+    400062: Lmid2
+    400064: Lmid3
+    400066: Lmid4
+    400068: Lrear1
+    400070: Lrear2
+    400072: Lrear3
+    400074: Lrear4
+    400076: Rfr1
+    400078: Rfr2
+    400080: Rfr3
+    400082: Rfr4
+    400084: Rmid1
+    400086: Rmid2
+    400088: Rmid3
+    400090: Rmid4
+    400092: Rrear1
+    400094: Rrear2
+    400096: Rrear3
+    400098: Rrear4
+    2300000: Crown
+    3300000: Crown
+    4300000: AntQueen
+    4300002: Crown
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: AntQueen
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
