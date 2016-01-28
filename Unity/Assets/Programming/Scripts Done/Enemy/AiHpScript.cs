@@ -12,8 +12,6 @@ public class AiHpScript : MonoBehaviour {
 	public int curHp;
 	public GameObject deathParticle;
 	public float destroyTime;
-	public AudioClip dyingSound;
-	public GameObject soundManager;
 	public Animator anim;
 
 	void Start() {
