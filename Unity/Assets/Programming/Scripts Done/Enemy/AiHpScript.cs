@@ -9,7 +9,7 @@ using System.Collections;
 public class AiHpScript : MonoBehaviour {
 
 	public int maxHP;
-	int curHp;
+	public int curHp;
 	public GameObject deathParticle;
 	public float destroyTime;
 	public AudioClip dyingSound;

@@ -25,7 +25,7 @@ public class MeleeDmgScript : KnockBackScript {
 	}
 
 	public void CheckDmg(){
-		Debug.DrawRay(transform.position, transform.forward, Color.green);
+		Debug.DrawRay(transform.position, transform.forward, Color.green, swordLength);
 		if(Physics.Raycast(transform.position, transform.forward, out hit, swordLength)){
 			if (hit.transform.tag == "Enemy"){
 				GiveDmg(hit.transform.gameObject);
