@@ -16,6 +16,7 @@ public class Pickup : MonoBehaviour {
 	void Start () {
 		uiCollect = GameObject.Find("Collectables UI");
 		pickupText = uiCollect.GetComponent<Text>();
+		uiCollect.GetComponent<UiCollectScript>().countdownTimer = uiResetTimer;
 	}
 
 	void OnTriggerEnter (Collider collision){

@@ -19,13 +19,13 @@ public class CanvasScript : MonoBehaviour {
 		}
 	}
 	
-	void HideObjects(){
+	public void HideObjects(){
 		for (int i = 0; i < toHideOnStartMenu.Length; i++){
 			toHideOnStartMenu[i].SetActive(false);
 		}
 	}
 	
-	void UnhideObjects(){
+	public void UnhideObjects(){
 		for (int i = 0; i < toHideOnStartMenu.Length; i++){
 			toHideOnStartMenu[i].SetActive(true);
 		}
