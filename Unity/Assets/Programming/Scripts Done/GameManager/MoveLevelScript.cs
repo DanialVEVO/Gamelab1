@@ -17,7 +17,7 @@ public class MoveLevelScript : MonoBehaviour {
 	private int curSplash = 0;
 
 	void Start (){
-		splashScreen = GameObject.Find("EndingSplash");
+		splashScreen = GameObject.Find("SplashImg");
 		splashScreen.SetActive(false);	
 	}
 
