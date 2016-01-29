@@ -17,7 +17,8 @@ public class MoveLevelScript : MonoBehaviour {
 	private int curSplash = 0;
 
 	void Start (){
-		splashScreen.SetActive(false);
+		splashScreen = GameObject.Find("EndingSplash");
+		splashScreen.SetActive(false);	
 	}
 
 	void OnCollisionEnter (Collision coll) {
