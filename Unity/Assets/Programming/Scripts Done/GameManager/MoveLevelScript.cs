@@ -33,7 +33,7 @@ public class MoveLevelScript : MonoBehaviour {
 	//				curSplash++;
 	//			} else {
 					Application.LoadLevel(nextLevelId);
-				}
+		//		}
 	//		}
 	//	}
 	}
