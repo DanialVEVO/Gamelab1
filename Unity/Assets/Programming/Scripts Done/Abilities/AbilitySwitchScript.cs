@@ -24,9 +24,9 @@ public class AbilitySwitchScript : MonoBehaviour {
 	public Sprite[] abilityImgSprArr = new Sprite[5];
 	private bool showSwitchEffect = false;
 
-//	void OnLevelWasLoaded(int levelID) {
-	void Start() {
-		//if (levelID >= 1){
+	void OnLevelWasLoaded(int levelID) {
+//	void Start() {
+		if (levelID >= 1){
 			FindAbilityObjects();
 			abilityUnlocked[0] = true;
 			SetSwitchedAbility(0);
@@ -34,7 +34,7 @@ public class AbilitySwitchScript : MonoBehaviour {
 			GetAbilityImg();
 			player = GameObject.Find("3D_SRH_001 (prefab v2)").transform;
 			showSwitchEffect = true;
-	//	}
+		}
 	}
 	
 	void Update() {
