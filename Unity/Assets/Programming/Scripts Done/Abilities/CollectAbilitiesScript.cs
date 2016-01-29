@@ -11,8 +11,13 @@ public class CollectAbilitiesScript : FloatingObjectsScript {
 	public int abilityId;
 	public AbilitySwitchScript abilitySwitchScr;
 	public AbilityGuideScript abilityGuideScr;
-	public SpawnEnemiesScript spawnEnemiesScr;
+	//public SpawnEnemiesScript spawnEnemiesScr;
 	//public GameObject pickupEffect;
+
+	void Start (){
+		abilitySwitchScr = GameObject.Find("AbilitySwitch").GetComponent<AbilitySwitchScript>();
+		abilityGuideScr = GameObject.Find("AbilityGuides").GetComponent<AbilityGuideScript>();
+	}
 
 	void Update () {
 		FloatingObject();
@@ -32,7 +37,7 @@ public class CollectAbilitiesScript : FloatingObjectsScript {
 	void OnTriggerEnter (Collider col) {
 		if (col.gameObject.tag == "Player"){
 			UnlockAbility();
-			spawnEnemiesScr.SpawnEnemies();
+			//spawnEnemiesScr.SpawnEnemies();
 			abilityGuideScr.OpenAbilityGuide(abilityId);
 			PickupEffects();
 		}
