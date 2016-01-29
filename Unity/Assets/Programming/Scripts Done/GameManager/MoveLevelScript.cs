@@ -22,7 +22,7 @@ public class MoveLevelScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision coll) {
-		if (coll.gameObject.transform.tag == "Player"){
+	//	if (coll.gameObject.transform.tag == "Player"){
 			GameObject enemiesListInScene = GameObject.FindWithTag("Enemies List");
 			Destroy(enemiesListInScene);
 			if (splashTimer <= 0){
@@ -35,6 +35,6 @@ public class MoveLevelScript : MonoBehaviour {
 					Application.LoadLevel(nextLevelId);
 				}
 			}
-		}
+	//	}
 	}
 }
