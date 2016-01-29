@@ -22,7 +22,7 @@ public class MoveLevelScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision coll) {
-		if (coll.gameObject.tag == "Player"){
+		if (coll.gameObject.transform.tag == "Player"){
 			GameObject enemiesListInScene = GameObject.FindWithTag("Enemies List");
 			Destroy(enemiesListInScene);
 			if (splashTimer <= 0){
